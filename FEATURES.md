@@ -24,7 +24,7 @@ This document serves as the **Master Feature Registry** for the Coaching Classes
 - [x] **Sticky Navigation Header**: Smooth backdrop blur on scroll (`.navbar.scrolled`).
 - [x] **Dark / Light Theme Toggle**: Persistent `localStorage.setItem('theme', ...)` switching design variables across all sections.
 - [x] **Mobile Drawer Menu**: Slide-down menu with quick CTAs for small screens.
-- [x] **Navigation Links**: `#hero`, `#mentor`, `#batches`, `#curriculum`, `#exam-simulator`, `#code-playground`, `#calculator`, `#faq`.
+- [x] **Clean Header Links**: High-converting essential links (`Home`, `Instructor`, `Live Batches`, `Syllabus`, `Student LMS`).
 
 ### B. Public Marketing Website (`index.html`) & Auth Flow
 - [x] **Hero Banner**: Displays 7x Certified badge, headline, and stats (98% Placement Rate, 1,500+ Mentored, ₹5,000 Special Fee).
@@ -33,6 +33,7 @@ This document serves as the **Master Feature Registry** for the Coaching Classes
 
 ### C. Dedicated Personalised Student Learning Portal (`dashboard.html` / `/dashboard`)
 - [x] **Full-Bleed Full Screen Layout**: `container-fluid` design utilizing 100% viewport width without artificial side margins/padding.
+- [x] **Header Controls**: Active batch slot (`⚡ Morning Batch (07:30 AM)`), Theme Switcher, and Logout button (clears session & redirects to `index.html`).
 - [x] **Tab 1 - Overview**: Quick stats cards (Enrolled Courses: 3, Active Courses: 1, Completed Courses: 2), Progress Bar, Join Live Zoom Class link, Attendance & Hours learned stats.
 - [x] **Tab 2 - My Courses & Lectures (Batch Tile Boxes Grid & Filters)**:
   - **Crisp Filter Pills**: `All Courses (3)`, `Active (1)`, `Completed (2)`.
