@@ -32,7 +32,7 @@ This document serves as the **Master Feature Registry** for the Coaching Classes
 - [x] **One-Click Demo Student Login**: Quick login button for `Aman Sharma` (`aman.student@gmail.com`) with instant redirect to `dashboard.html`.
 
 ### C. Dedicated Personalised Student Learning Portal (`dashboard.html` / `/dashboard`)
-- [x] **Standalone Dashboard Layout**: Full-screen learning workspace with sticky header, avatar badge, and sidebar navigation.
+- [x] **Full-Bleed Full Screen Layout**: `container-fluid` design utilizing 100% viewport width without artificial side margins/padding.
 - [x] **Tab 1 - Dashboard Overview**: Quick stats cards (Enrolled Courses: 3, Active Courses: 1, Completed Courses: 2), Progress Bar, Join Live Zoom Class link, Attendance & Hours learned stats.
 - [x] **Tab 2 - Enrolled Lectures & Video LMS (Batch Tile Boxes Grid & Filters)**:
   - **KSoft Filter Pills**: `Enrolled Courses (3)`, `Active Courses (1)`, `Completed Courses (2)`.

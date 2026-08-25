@@ -128,6 +128,13 @@ button, input, select, textarea {
   padding-right: 1.5rem;
 }
 
+.container-fluid {
+  width: 100%;
+  max-width: 100%;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
 .text-gradient {
   background: var(--gradient-primary);
   -webkit-background-clip: text;
