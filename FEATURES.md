@@ -33,19 +33,19 @@ This document serves as the **Master Feature Registry** for the Coaching Classes
 
 ### C. Dedicated Personalised Student Learning Portal (`dashboard.html` / `/dashboard`)
 - [x] **Full-Bleed Full Screen Layout**: `container-fluid` design utilizing 100% viewport width without artificial side margins/padding.
-- [x] **Tab 1 - Dashboard Overview**: Quick stats cards (Enrolled Courses: 3, Active Courses: 1, Completed Courses: 2), Progress Bar, Join Live Zoom Class link, Attendance & Hours learned stats.
-- [x] **Tab 2 - Enrolled Lectures & Video LMS (Batch Tile Boxes Grid & Filters)**:
-  - **KSoft Filter Pills**: `Enrolled Courses (3)`, `Active Courses (1)`, `Completed Courses (2)`.
+- [x] **Tab 1 - Overview**: Quick stats cards (Enrolled Courses: 3, Active Courses: 1, Completed Courses: 2), Progress Bar, Join Live Zoom Class link, Attendance & Hours learned stats.
+- [x] **Tab 2 - My Courses & Lectures (Batch Tile Boxes Grid & Filters)**:
+  - **Crisp Filter Pills**: `All Courses (3)`, `Active (1)`, `Completed (2)`.
   - **Enrolled Batch Tile Cards**: 3 interactive batch cards (`☀️ Morning Batch`, `🌙 Evening Batch`, `⚡ Weekend Fast-Track`).
   - **Course Progress Bar per Tile**: Individual progress fill %, lecture count, and total hours per batch box.
   - **Tile Click Navigation**: Clicking any Batch Tile Box opens the detailed lecture playlist inside that batch (`openBatchLectures`).
   - **Back Navigation**: `← Back to Enrolled Batches` button (`closeBatchLectures`).
-- [x] **Tab 3 - Ask Doubts & Q&A Thread**: Submit questions directly to Gautam Chaskar by topic, view replies in `localStorage`.
+- [x] **Tab 3 - Q&A & Doubts**: Submit questions directly to Gautam Chaskar by topic, view replies in `localStorage`.
 - [x] **Tab 4 - Assignments & Labs**: Submit GitHub repository URLs, dynamically update progress.
-- [x] **Tab 5 - Practice Exam Simulator**: ADM-201 & PD1 certification tests.
-- [x] **Tab 6 - Order History & Invoice**: View Order `#SFDC-5196` (₹5,000.00) with printable GST receipt.
-- [x] **Tab 7 - Certificate Preview**: Dynamic Certificate of Excellence generator signed by Gautam Chaskar.
-- [x] **Tab 8 - Settings & Preferences**: Profile editor form for student name, email, and active batch slot.
+- [x] **Tab 5 - Exam Simulator**: ADM-201 & PD1 certification tests.
+- [x] **Tab 6 - Orders & Invoices**: View Order `#SFDC-5196` (₹5,000.00) with printable GST receipt.
+- [x] **Tab 7 - Certificate**: Dynamic Certificate of Excellence generator signed by Gautam Chaskar.
+- [x] **Tab 8 - Settings**: Profile editor form for student name, email, and active batch slot.
 
 ### D. Lead Instructor Showcase
 - [x] **Gautam Chaskar Profile Card**: Photo avatar with initials `GC`, current UST role badge, experience metrics, and 7x Salesforce credentials badges.
