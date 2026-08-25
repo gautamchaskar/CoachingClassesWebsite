@@ -24,16 +24,15 @@ This document serves as the **Master Feature Registry** for the Coaching Classes
 - [x] **Sticky Navigation Header**: Smooth backdrop blur on scroll (`.navbar.scrolled`).
 - [x] **Dark / Light Theme Toggle**: Persistent `localStorage.setItem('theme', ...)` switching design variables across all sections.
 - [x] **Mobile Drawer Menu**: Slide-down menu with quick CTAs for small screens.
-- [x] **Clean Header Links**: High-converting essential links (`Home`, `Instructor`, `Live Batches`, `Syllabus`, `Student LMS`).
+- [x] **Clean Header Links**: Concise marketing links (`Home`, `Instructor`, `Live Batches`, `Syllabus`).
 
 ### B. Public Marketing Website (`index.html`) & Auth Flow
 - [x] **Hero Banner**: Displays 7x Certified badge, headline, and stats (98% Placement Rate, 1,500+ Mentored, ₹5,000 Special Fee).
 - [x] **Login / Register Button**: Header and mobile menu CTA button (`🔑 Login / Register`) triggering the auth modal leading to standalone `dashboard.html`.
-- [x] **Strict LMS Launch Guard**: `Student LMS` link opens the `Login / Register` modal if unauthenticated; launches `dashboard.html` only when authenticated.
 - [x] **One-Click Demo Student Login**: Quick login button for `Aman Sharma` (`aman.student@gmail.com`) with instant redirect to `dashboard.html`.
 
 ### C. Dedicated Personalised Student Learning Portal (`dashboard.html` / `/dashboard`)
-- [x] **Strict Page Auth Guard**: Direct unauthenticated access to `dashboard.html` redirects to `index.html?auth=required` and triggers login modal.
+- [x] **Strict Page Auth Guard**: Direct unauthenticated access to `dashboard.html` redirects to `index.html?auth=required#authModal` and triggers login modal.
 - [x] **Full-Bleed Full Screen Layout**: `container-fluid` design utilizing 100% viewport width without artificial side margins/padding.
 - [x] **Header Controls**: Active batch slot (`⚡ Morning Batch (07:30 AM)`), Theme Switcher, and Logout button (clears session & redirects to `index.html`).
 - [x] **Tab 1 - Overview**: Quick stats cards (Enrolled Courses: 3, Active Courses: 1, Completed Courses: 2), Progress Bar, Join Live Zoom Class link, Attendance & Hours learned stats.
