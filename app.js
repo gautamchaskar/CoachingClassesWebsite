@@ -152,12 +152,12 @@ document.addEventListener('DOMContentLoaded', () => {
   initForms();
   initSeatTimers();
   
-  // Student Portal
+  // Student Portal Logic
   initAuthManager();
   initPortalTabs();
   initStudentInteractions();
 
-  // New High-Converting Features
+  // High-Converting Features
   initExamSimulator();
   initCodePlayground();
   initSalaryEstimator();
@@ -561,12 +561,10 @@ function initSalaryEstimator() {
 /* --- STUDENT PORTAL AUTH MANAGER --- */
 function initAuthManager() {
   let studentData = JSON.parse(localStorage.getItem('studentSession'));
-  if (!studentData) {
-    studentData = DEFAULT_STUDENT;
-    localStorage.setItem('studentSession', JSON.stringify(studentData));
+  
+  if (studentData) {
+    updateAuthUI(studentData);
   }
-
-  updateAuthUI(studentData);
 
   const demoLoginBtn = document.getElementById('demoLoginBtn');
   if (demoLoginBtn) {
@@ -578,10 +576,11 @@ function initAuthManager() {
       if (authModal) authModal.classList.remove('active');
       document.body.style.overflow = '';
       
-      showToast(`Welcome back, ${DEFAULT_STUDENT.name}! Student Portal Unlocked.`, 'success');
+      showToast(`Welcome back, ${DEFAULT_STUDENT.name}! Redirecting to Personalised Learning Portal...`, 'success');
       
-      const dashboardSec = document.getElementById('portal');
-      if (dashboardSec) dashboardSec.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => {
+        window.location.href = 'dashboard.html';
+      }, 700);
     });
   }
 
@@ -605,7 +604,11 @@ function initAuthManager() {
       if (authModal) authModal.classList.remove('active');
       document.body.style.overflow = '';
 
-      showToast(`Logged in successfully as ${userSession.name}!`, 'success');
+      showToast(`Logged in successfully as ${userSession.name}! Opening Dashboard...`, 'success');
+
+      setTimeout(() => {
+        window.location.href = 'dashboard.html';
+      }, 700);
     });
   }
 
@@ -614,7 +617,9 @@ function initAuthManager() {
     logoutBtn.addEventListener('click', () => {
       localStorage.removeItem('studentSession');
       showToast('Logged out of Student Portal', 'info');
-      setTimeout(() => location.reload(), 800);
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 600);
     });
   }
 }
@@ -622,6 +627,8 @@ function initAuthManager() {
 function updateAuthUI(student) {
   const authNavBtn = document.getElementById('authNavBtn');
   const studentNameEl = document.getElementById('portalStudentName');
+  const dashWelcomeName = document.getElementById('dashWelcomeName');
+  const certStudentName = document.getElementById('certStudentName');
   const studentEmailEl = document.getElementById('portalStudentEmail');
   const studentAvatarEl = document.getElementById('portalStudentAvatar');
   const studentBatchEl = document.getElementById('portalStudentBatch');
@@ -630,11 +637,16 @@ function updateAuthUI(student) {
 
   if (authNavBtn) {
     authNavBtn.innerHTML = `👤 ${student.name.split(' ')[0]}'s Portal`;
+    authNavBtn.onclick = function() {
+      window.location.href = 'dashboard.html';
+    };
   }
 
   if (studentNameEl) studentNameEl.textContent = student.name;
+  if (dashWelcomeName) dashWelcomeName.textContent = student.name.split(' ')[0];
+  if (certStudentName) certStudentName.textContent = student.name;
   if (studentEmailEl) studentEmailEl.textContent = student.email;
-  if (studentBatchEl) studentBatchEl.textContent = student.batch;
+  if (studentBatchEl) studentBatchEl.textContent = `Active Enrolled Batch: ${student.batch}`;
   
   if (studentAvatarEl) {
     const initials = student.name.split(' ').map(n => n[0]).join('').toUpperCase();
@@ -717,6 +729,26 @@ function initStudentInteractions() {
 
       assignmentForm.reset();
       showToast('🎉 Assignment submitted successfully! Progress updated to 85%.', 'success');
+    });
+  }
+
+  const profileSettingsForm = document.getElementById('profileSettingsForm');
+  if (profileSettingsForm) {
+    profileSettingsForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('settingName').value;
+      const email = document.getElementById('settingEmail').value;
+      const batch = document.getElementById('settingBatch').value;
+
+      let student = JSON.parse(localStorage.getItem('studentSession')) || DEFAULT_STUDENT;
+      student.name = name;
+      student.email = email;
+      student.batch = batch;
+
+      localStorage.setItem('studentSession', JSON.stringify(student));
+      updateAuthUI(student);
+
+      showToast('💾 Profile settings & preferences saved successfully!', 'success');
     });
   }
 }

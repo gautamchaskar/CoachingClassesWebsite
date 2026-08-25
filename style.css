@@ -964,53 +964,6 @@ button, input, select, textarea {
   line-height: 1.6;
 }
 
-/* --- Reviews & Placements Carousel / Grid --- */
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-}
-
-.testimonial-card {
-  border-radius: var(--radius-lg);
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.testimonial-quote {
-  font-size: 0.975rem;
-  color: var(--text-secondary);
-  font-style: italic;
-  margin-bottom: 1.5rem;
-  line-height: 1.7;
-}
-
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.author-avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--accent-primary);
-}
-
-.author-name {
-  font-weight: 700;
-  font-size: 1rem;
-}
-
-.author-role {
-  font-size: 0.825rem;
-  color: var(--text-muted);
-}
-
 /* --- Fee Calculator Widget --- */
 .calculator-card {
   max-width: 800px;
