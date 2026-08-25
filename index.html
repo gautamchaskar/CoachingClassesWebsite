@@ -347,33 +347,69 @@ trigger AccountTrigger on Account (before insert, before update) {
       </div>
 
       <div class="salary-card bg-glass">
-        <div class="calc-grid">
-          <div>
-            <h3 style="font-size:1.4rem; margin-bottom:1.25rem;">Select Role & Experience</h3>
-
-            <div class="form-group">
-              <label class="form-label">Salesforce Career Track</label>
-              <select class="form-select" id="salaryRoleSelect">
-                <option value="developer">Salesforce Developer (Apex / LWC)</option>
-                <option value="admin">Salesforce Administrator</option>
-                <option value="ai">Salesforce AI & Agentforce Specialist</option>
-                <option value="architect">Technical / Application Architect</option>
-              </select>
+        <div style="margin-bottom:1.75rem;">
+          <h3 style="font-size:1.25rem; margin-bottom:1rem; color:var(--text-primary);">1. Select Salesforce Career Track</h3>
+          
+          <div class="salary-role-grid">
+            <div class="salary-role-card active" data-role="developer">
+              <div class="role-header">
+                <span class="role-title">💻 Salesforce Developer</span>
+                <span class="badge badge-primary">🔥 High Demand</span>
+              </div>
+              <p style="font-size:0.8rem; color:var(--text-secondary); margin:0;">Apex, LWC, Triggers & Integration</p>
+              <div class="role-range">Base Range: <strong style="color:var(--accent-emerald);">₹7.5 LPA - ₹28.0 LPA</strong></div>
             </div>
 
+            <div class="salary-role-card" data-role="ai">
+              <div class="role-header">
+                <span class="role-title">🤖 AI & Agentforce Specialist</span>
+                <span class="badge badge-emerald">🚀 Next-Gen AI</span>
+              </div>
+              <p style="font-size:0.8rem; color:var(--text-secondary); margin:0;">Prompt Eng, Copilot & AI Agents</p>
+              <div class="role-range">Base Range: <strong style="color:var(--accent-emerald);">₹12.0 LPA - ₹34.0 LPA</strong></div>
+            </div>
+
+            <div class="salary-role-card" data-role="admin">
+              <div class="role-header">
+                <span class="role-title">⚡ Salesforce Administrator</span>
+                <span class="badge badge-secondary">✨ Foundation</span>
+              </div>
+              <p style="font-size:0.8rem; color:var(--text-secondary); margin:0;">Flows, Security, Data & Config</p>
+              <div class="role-range">Base Range: <strong style="color:var(--accent-emerald);">₹5.5 LPA - ₹18.0 LPA</strong></div>
+            </div>
+
+            <div class="salary-role-card" data-role="architect">
+              <div class="role-header">
+                <span class="role-title">🏗️ Technical Architect</span>
+                <span class="badge badge-purple">🏆 Executive</span>
+              </div>
+              <p style="font-size:0.8rem; color:var(--text-secondary); margin:0;">Enterprise Design & Multi-Org Arch</p>
+              <div class="role-range">Base Range: <strong style="color:var(--accent-emerald);">₹16.0 LPA - ₹42.0 LPA</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc-grid" style="align-items:center;">
+          <div>
+            <h3 style="font-size:1.25rem; margin-bottom:1rem; color:var(--text-primary);">2. Select Experience Level</h3>
             <div class="calc-slider-group">
               <div class="calc-slider-header">
                 <span>Years of Relevant Experience:</span>
-                <span id="expValue" class="text-gradient" style="font-weight:700;">2 Years</span>
+                <span id="expValue" class="text-gradient" style="font-weight:700; font-size:1.1rem;">2 Years</span>
               </div>
               <input type="range" min="0" max="8" value="2" class="calc-slider" id="expSlider">
+              <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:var(--text-muted); margin-top:0.4rem;">
+                <span>Fresher (0 Yrs)</span>
+                <span>Mid-Level (4 Yrs)</span>
+                <span>Senior (8+ Yrs)</span>
+              </div>
             </div>
           </div>
 
           <div class="calc-result-box">
-            <div style="font-size:0.9rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.05em;">Projected Average Package</div>
-            <div class="calc-result-amount" id="projectedSalary" style="color:var(--accent-emerald);">₹13.1 LPA</div>
-            <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1.25rem;">
+            <div style="font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.25rem;">Projected Average Package</div>
+            <div class="calc-result-amount" id="projectedSalary" style="color:var(--accent-emerald); font-size:2.4rem; font-weight:800;">₹13.1 LPA</div>
+            <p style="font-size:0.825rem; color:var(--text-secondary); margin-bottom:1.25rem;">
               Based on Indian IT market benchmarks (Deloitte, UST, Accenture, TCS).
             </p>
 

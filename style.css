@@ -684,11 +684,69 @@ button, input, select, textarea {
 
 /* --- SALARY ESTIMATOR --- */
 .salary-card {
-  max-width: 900px;
+  max-width: 950px;
   margin: 0 auto;
   border-radius: var(--radius-lg);
-  padding: 3rem;
+  padding: 2.5rem;
   box-shadow: var(--glass-shadow);
+}
+
+.salary-role-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+@media (max-width: 768px) {
+  .salary-role-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.salary-role-card {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.25rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.salary-role-card:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
+}
+
+.salary-role-card.active {
+  background: rgba(59, 130, 246, 0.12);
+  border: 2px solid var(--accent-primary);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.35);
+}
+
+.salary-role-card .role-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.salary-role-card .role-title {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.salary-role-card .role-range {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
 }
 
 /* --- Live Batches Section --- */

@@ -534,27 +534,36 @@ function initSalaryEstimator() {
   const expSlider = document.getElementById('expSlider');
   const expValue = document.getElementById('expValue');
   const projectedSalary = document.getElementById('projectedSalary');
-  const roleSelect = document.getElementById('salaryRoleSelect');
+  const roleCards = document.querySelectorAll('.salary-role-card');
 
   if (!expSlider || !projectedSalary) return;
 
+  let activeRole = 'developer';
+
+  roleCards.forEach(card => {
+    card.addEventListener('click', () => {
+      roleCards.forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+      activeRole = card.getAttribute('data-role') || 'developer';
+      updateSalary();
+    });
+  });
+
   function updateSalary() {
     const exp = parseInt(expSlider.value, 10);
-    const role = roleSelect ? roleSelect.value : 'developer';
-
     expValue.textContent = `${exp} ${exp === 1 ? 'Year' : 'Years'}`;
 
-    let baseSalary = 6.5;
-    if (role === 'developer') baseSalary = 7.5;
-    if (role === 'architect') baseSalary = 16.0;
-    if (role === 'ai') baseSalary = 12.0;
+    let baseSalary = 7.5;
+    if (activeRole === 'admin') baseSalary = 5.5;
+    if (activeRole === 'developer') baseSalary = 7.5;
+    if (activeRole === 'ai') baseSalary = 12.0;
+    if (activeRole === 'architect') baseSalary = 16.0;
 
     const estimatedLPA = Math.round((baseSalary + exp * 2.8) * 10) / 10;
     projectedSalary.textContent = `₹${estimatedLPA} LPA`;
   }
 
   expSlider.addEventListener('input', updateSalary);
-  if (roleSelect) roleSelect.addEventListener('change', updateSalary);
   updateSalary();
 }
 

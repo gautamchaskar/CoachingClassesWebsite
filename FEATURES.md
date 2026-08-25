@@ -62,7 +62,8 @@ This document serves as the **Master Feature Registry** for the Coaching Classes
 - [x] **1-Click Copy Code Snippet**: Copies code directly to system clipboard with toast notification.
 
 ### G. Salesforce Salary & Career Growth Estimator (`#salary-calculator`)
-- [x] **Role & Experience Slider**: Interactive slider calculating market CTC packages (₹6.5 LPA to ₹32.0 LPA) based on IT industry benchmarks.
+- [x] **Interactive Role Cards Grid**: Replaced dropdown picklist with 4 interactive glassmorphic cards (`Salesforce Developer`, `AI & Agentforce Specialist`, `Salesforce Administrator`, `Technical Architect`).
+- [x] **Experience Slider & Live Package Calculator**: Real-time CTC estimation (₹5.5 LPA to ₹42.0 LPA) based on IT industry market benchmarks.
 
 ---
 
