@@ -57,11 +57,7 @@ This document serves as the **Master Feature Registry** for the Coaching Classes
 - [x] **Interactive Practice Quiz Engine**: Supports **Salesforce Admin (ADM-201)** and **Platform Developer 1 (PD1)** practice questions.
 - [x] **Option Selector & Score Calculator**: Select answers, calculate score %, and display pass/fail feedback with answers.
 
-### F. Apex & LWC Code Playground (`#code-playground`)
-- [x] **Production Source Code Viewer**: Tabbed code container showing Apex Trigger Framework, SOQL relationship query, and LWC Imperative Apex calls.
-- [x] **1-Click Copy Code Snippet**: Copies code directly to system clipboard with toast notification.
-
-### G. Salesforce Salary & Career Growth Estimator (`#salary-calculator`)
+### F. Salesforce Salary & Career Growth Estimator (`#salary-calculator`)
 - [x] **Interactive Role Cards Grid**: Replaced dropdown picklist with 4 interactive glassmorphic cards (`Salesforce Developer`, `AI & Agentforce Specialist`, `Salesforce Administrator`, `Technical Architect`).
 - [x] **Experience Slider & Live Package Calculator**: Real-time CTC estimation (₹5.5 LPA to ₹42.0 LPA) based on IT industry market benchmarks.
 

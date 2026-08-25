@@ -281,59 +281,6 @@
   </section>
 
   <!-- ==========================================================================
-       NEW SECTION 2: APEX & LWC INTERACTIVE CODE PLAYGROUND
-       ========================================================================== -->
-  <section class="section" id="code-playground" style="background:var(--bg-secondary);">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-subtitle">Hands-On Code Viewer</span>
-        <h2 class="section-title">Production Apex & LWC <span class="text-gradient">Code Playground</span></h2>
-        <p class="section-description">
-          Inspect production-ready Salesforce Apex Triggers, SOQL queries, and LWC component source code.
-        </p>
-      </div>
-
-      <div class="code-window" style="max-width:950px; margin:0 auto;">
-        <div class="code-header">
-          <div class="filter-tabs" style="margin-bottom:0; gap:0.5rem;">
-            <button class="tab-btn active" data-code-tab="trigger">Apex Trigger Framework</button>
-            <button class="tab-btn" data-code-tab="soql">SOQL Relationship Query</button>
-            <button class="tab-btn" data-code-tab="lwc">LWC Imperative Apex</button>
-          </div>
-
-          <button class="btn btn-secondary" id="copyCodeBtn" style="padding:0.4rem 0.9rem; font-size:0.8rem;">
-            📋 Copy Snippet
-          </button>
-        </div>
-
-        <pre class="code-body" id="codeDisplay">// ⚡ Production Bulkified Apex Trigger Framework
-trigger AccountTrigger on Account (before insert, before update) {
-    // Collect account names to prevent duplicate creation
-    Set<String> accountNames = new Set<String>();
-    for (Account acc : Trigger.new) {
-        if (acc.Name != null) {
-            accountNames.add(acc.Name.toLowerCase());
-        }
-    }
-    
-    // Bulk SOQL Query outside loops
-    Set<String> existingNames = new Set<String>();
-    for (Account existing : [SELECT Id, Name FROM Account WHERE Name IN :accountNames WITH USER_MODE]) {
-        existingNames.add(existing.Name.toLowerCase());
-    }
-    
-    // Add validation error if duplicate found
-    for (Account acc : Trigger.new) {
-        if (existingNames.contains(acc.Name.toLowerCase())) {
-            acc.Name.addError('An Account with this name already exists in Salesforce.');
-        }
-    }
-}</pre>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
        NEW SECTION 3: SALESFORCE CAREER & SALARY ESTIMATOR
        ========================================================================== -->
   <section class="section" id="salary-calculator">
@@ -1236,7 +1183,6 @@ trigger AccountTrigger on Account (before insert, before update) {
             <li><a href="#batches" class="footer-link">Live Batches</a></li>
             <li><a href="#curriculum" class="footer-link">Course Syllabus</a></li>
             <li><a href="#exam-simulator" class="footer-link">Exam Practice Simulator</a></li>
-            <li><a href="#code-playground" class="footer-link">Apex Code Playground</a></li>
             <li><a href="#portal" class="footer-link">Student LMS Portal</a></li>
           </ul>
         </div>
