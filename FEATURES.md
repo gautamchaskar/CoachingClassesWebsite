@@ -34,10 +34,11 @@ This document serves as the **Master Feature Registry** for the Coaching Classes
 ### C. Dedicated Personalised Student Learning Portal (`dashboard.html` / `/dashboard`)
 - [x] **Standalone Dashboard Layout**: Full-screen learning workspace with sticky header, avatar badge, and sidebar navigation.
 - [x] **Tab 1 - Dashboard Overview**: Progress Bar, Join Live Zoom Class link, Attendance & Hours learned stats.
-- [x] **Tab 2 - Enrolled Lectures & Video LMS (Batch-Wise Sub-List)**:
-  - **Batch Sub-Tabs**: Morning Batch (07:30 AM), Evening Batch (08:30 PM), Weekend Fast-Track Batch.
-  - **Course Module Accordions**: Module 1 (Admin), Module 2 (Apex), Module 3 (LWC), Module 4 (Integrations).
-  - **Individual Lecture Cards**: Session title, recording date, duration, instructor name, and 1-click video playback button.
+- [x] **Tab 2 - Enrolled Lectures & Video LMS (Batch Tile Boxes Grid)**:
+  - **Enrolled Batch Tile Cards**: 3 interactive batch cards (`☀️ Morning Batch`, `🌙 Evening Batch`, `⚡ Weekend Fast-Track`).
+  - **Course Progress Bar per Tile**: Individual progress fill %, lecture count, and total hours per batch box.
+  - **Tile Click Navigation**: Clicking any Batch Tile Box opens the detailed lecture playlist inside that batch (`openBatchLectures`).
+  - **Back Navigation**: `← Back to Enrolled Batches` button (`closeBatchLectures`).
 - [x] **Tab 3 - Ask Doubts & Q&A Thread**: Submit questions directly to Gautam Chaskar by topic, view replies in `localStorage`.
 - [x] **Tab 4 - Assignments & Labs**: Submit GitHub repository URLs, dynamically update progress.
 - [x] **Tab 5 - Practice Exam Simulator**: ADM-201 & PD1 certification tests.
@@ -68,6 +69,6 @@ This document serves as the **Master Feature Registry** for the Coaching Classes
 > **Strict Rule**: When making edits or adding new features:
 > 1. NEVER remove any element from the Master Feature Checklist above.
 > 2. DO NOT overwrite `localStorage` keys (`theme`, `studentSession`).
-> 3. DO NOT break any IDs or data-attributes (`data-open-modal`, `data-portal-tab`, `data-filter`, `data-ajax-form`, `data-code-tab`, `data-batch-tab`).
+> 3. DO NOT break any IDs or data-attributes (`data-open-modal`, `data-portal-tab`, `data-filter`, `data-ajax-form`, `data-code-tab`).
 > 4. ALWAYS test that the One-Click Demo Student Login redirects to `dashboard.html`.
 > 5. Update this `FEATURES.md` document whenever a new feature is added!

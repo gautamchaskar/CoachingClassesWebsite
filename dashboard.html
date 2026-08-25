@@ -176,226 +176,321 @@
           </div>
         </div>
 
-        <!-- TAB 2: ENROLLED LECTURES (BATCH-WISE SUB-LIST) -->
+        <!-- TAB 2: ENROLLED LECTURES (ENROLLED BATCH TILES / BOXES GRID) -->
         <div class="portal-tab-content" id="tab-courses">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; flex-wrap:wrap; gap:1rem;">
-            <div>
-              <h3 style="font-size:1.5rem;">Enrolled Lectures & Video LMS</h3>
+          
+          <!-- BATCH TILES GRID VIEW -->
+          <div id="enrolledBatchTilesView">
+            <div style="margin-bottom:1.75rem;">
+              <h3 style="font-size:1.5rem;">Enrolled Courses & Batch Library</h3>
               <p style="font-size:0.875rem; color:var(--text-secondary);">
-                Browse video recordings organized batch-wise and course-module wise.
+                Select your enrolled batch tile to view its recorded lectures & module playlist.
               </p>
             </div>
 
-            <!-- Batch Selector Sub Tabs -->
-            <div class="filter-tabs" style="margin-bottom:0; gap:0.5rem;">
-              <button class="tab-btn active" data-batch-tab="batch-morning">☀️ Morning Batch</button>
-              <button class="tab-btn" data-batch-tab="batch-evening">🌙 Evening Batch</button>
-              <button class="tab-btn" data-batch-tab="batch-weekend">⚡ Weekend Batch</button>
-            </div>
-          </div>
-
-          <!-- BATCH 1: MORNING BATCH (ACTIVE ENROLLED) -->
-          <div class="batch-lms-content active" id="batch-morning">
-            
-            <!-- Module 1 Accordion -->
-            <div class="accordion-item bg-glass active" style="margin-bottom:1rem;">
-              <div class="accordion-header" style="background:var(--bg-secondary);">
-                <div class="accordion-header-left">
-                  <span class="badge badge-emerald">Enrolled</span>
-                  <div>
-                    Module 1: Salesforce Admin & Security Fundamentals
-                    <div style="font-size:0.75rem; color:var(--text-muted); font-weight:400;">4 Recorded Lectures • 5 Hours</div>
-                  </div>
-                </div>
-                <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-              </div>
-              <div class="accordion-body" style="padding-top:1rem;">
-                <div style="display:flex; flex-direction:column; gap:0.75rem;">
-                  <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0; padding:1rem 1.25rem;">
-                    <div>
-                      <div style="font-weight:700; font-size:0.95rem;">Lecture 1.1: Cloud Architecture, Multi-Tenancy & Org Setup</div>
-                      <div style="font-size:0.8rem; color:var(--text-muted);">Recorded Aug 01, 2026 • 1h 15m • Instructor: Gautam Chaskar</div>
-                    </div>
-                    <button class="btn btn-secondary" onclick="showToast('▶ Video Player: Playing Lecture 1.1', 'info')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
-                      ▶ Play Video
-                    </button>
-                  </div>
-
-                  <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0; padding:1rem 1.25rem;">
-                    <div>
-                      <div style="font-weight:700; font-size:0.95rem;">Lecture 1.2: Objects, Fields, Validation Rules & Formulas</div>
-                      <div style="font-size:0.8rem; color:var(--text-muted);">Recorded Aug 03, 2026 • 1h 30m • Instructor: Gautam Chaskar</div>
-                    </div>
-                    <button class="btn btn-secondary" onclick="showToast('▶ Video Player: Playing Lecture 1.2', 'info')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
-                      ▶ Play Video
-                    </button>
-                  </div>
-
-                  <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0; padding:1rem 1.25rem;">
-                    <div>
-                      <div style="font-weight:700; font-size:0.95rem;">Lecture 1.3: Data Security Model, OWD, Roles & Permission Sets</div>
-                      <div style="font-size:0.8rem; color:var(--text-muted);">Recorded Aug 05, 2026 • 1h 45m • Instructor: Gautam Chaskar</div>
-                    </div>
-                    <button class="btn btn-secondary" onclick="showToast('▶ Video Player: Playing Lecture 1.3', 'info')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
-                      ▶ Play Video
-                    </button>
-                  </div>
-
-                  <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0; padding:1rem 1.25rem;">
-                    <div>
-                      <div style="font-weight:700; font-size:0.95rem;">Lecture 1.4: Salesforce Flow Builder Masterclass & Triggered Automations</div>
-                      <div style="font-size:0.8rem; color:var(--text-muted);">Recorded Aug 08, 2026 • 1h 40m • Instructor: Gautam Chaskar</div>
-                    </div>
-                    <button class="btn btn-secondary" onclick="showToast('▶ Video Player: Playing Lecture 1.4', 'info')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
-                      ▶ Play Video
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Module 2 Accordion -->
-            <div class="accordion-item bg-glass active" style="margin-bottom:1rem;">
-              <div class="accordion-header" style="background:var(--bg-secondary);">
-                <div class="accordion-header-left">
-                  <span class="badge badge-emerald">Enrolled</span>
-                  <div>
-                    Module 2: Apex Programming & SOQL Queries
-                    <div style="font-size:0.75rem; color:var(--text-muted); font-weight:400;">5 Recorded Lectures • 7.5 Hours</div>
-                  </div>
-                </div>
-                <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-              </div>
-              <div class="accordion-body" style="padding-top:1rem;">
-                <div style="display:flex; flex-direction:column; gap:0.75rem;">
-                  <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0; padding:1rem 1.25rem;">
-                    <div>
-                      <div style="font-weight:700; font-size:0.95rem;">Lecture 2.1: Apex Syntax, OOPs Concepts & Collections (Lists/Maps)</div>
-                      <div style="font-size:0.8rem; color:var(--text-muted);">Recorded Aug 12, 2026 • 1h 20m • Instructor: Gautam Chaskar</div>
-                    </div>
-                    <button class="btn btn-secondary" onclick="showToast('▶ Video Player: Playing Lecture 2.1', 'info')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
-                      ▶ Play Video
-                    </button>
-                  </div>
-
-                  <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0; padding:1rem 1.25rem;">
-                    <div>
-                      <div style="font-weight:700; font-size:0.95rem;">Lecture 2.2: Apex Trigger Framework Architecture & Bulkification</div>
-                      <div style="font-size:0.8rem; color:var(--text-muted);">Recorded Aug 15, 2026 • 1h 45m • Instructor: Gautam Chaskar</div>
-                    </div>
-                    <button class="btn btn-secondary" onclick="showToast('▶ Video Player: Playing Lecture 2.2', 'info')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
-                      ▶ Play Video
-                    </button>
-                  </div>
-
-                  <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0; padding:1rem 1.25rem;">
-                    <div>
-                      <div style="font-weight:700; font-size:0.95rem;">Lecture 2.3: SOQL & SOSL Relationship Query Optimization</div>
-                      <div style="font-size:0.8rem; color:var(--text-muted);">Recorded Aug 18, 2026 • 1h 30m • Instructor: Gautam Chaskar</div>
-                    </div>
-                    <button class="btn btn-secondary" onclick="showToast('▶ Video Player: Playing Lecture 2.3', 'info')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
-                      ▶ Play Video
-                    </button>
-                  </div>
-
-                  <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0; padding:1rem 1.25rem;">
-                    <div>
-                      <div style="font-weight:700; font-size:0.95rem;">Lecture 2.4: Asynchronous Apex (Batch Apex, Queueable & Future)</div>
-                      <div style="font-size:0.8rem; color:var(--text-muted);">Recorded Aug 21, 2026 • 1h 40m • Instructor: Gautam Chaskar</div>
-                    </div>
-                    <button class="btn btn-secondary" onclick="showToast('▶ Video Player: Playing Lecture 2.4', 'info')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
-                      ▶ Play Video
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Module 3 Accordion -->
-            <div class="accordion-item bg-glass active" style="margin-bottom:1rem;">
-              <div class="accordion-header" style="background:var(--bg-secondary);">
-                <div class="accordion-header-left">
-                  <span class="badge badge-emerald">In Progress</span>
-                  <div>
-                    Module 3: Lightning Web Components (LWC) Architecture
-                    <div style="font-size:0.75rem; color:var(--text-muted); font-weight:400;">4 Recorded Lectures • 6 Hours</div>
-                  </div>
-                </div>
-                <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-              </div>
-              <div class="accordion-body" style="padding-top:1rem;">
-                <div style="display:flex; flex-direction:column; gap:0.75rem;">
-                  <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0; padding:1rem 1.25rem;">
-                    <div>
-                      <div style="font-weight:700; font-size:0.95rem;">Lecture 3.1: Modern ES6+ JavaScript & Shadow DOM Basics</div>
-                      <div style="font-size:0.8rem; color:var(--text-muted);">Recorded Aug 22, 2026 • 1h 30m • Instructor: Gautam Chaskar</div>
-                    </div>
-                    <button class="btn btn-secondary" onclick="showToast('▶ Video Player: Playing Lecture 3.1', 'info')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
-                      ▶ Play Video
-                    </button>
-                  </div>
-
-                  <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0; padding:1rem 1.25rem;">
-                    <div>
-                      <div style="font-weight:700; font-size:0.95rem;">Lecture 3.2: LWC Data Binding & Reactive @api Properties</div>
-                      <div style="font-size:0.8rem; color:var(--text-muted);">Recorded Aug 23, 2026 • 1h 20m • Instructor: Gautam Chaskar</div>
-                    </div>
-                    <button class="btn btn-secondary" onclick="showToast('▶ Video Player: Playing Lecture 3.2', 'info')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
-                      ▶ Play Video
-                    </button>
-                  </div>
-
-                  <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0; padding:1rem 1.25rem;">
-                    <div>
-                      <div style="font-weight:700; font-size:0.95rem;">Lecture 3.3: LWC Imperative Apex Calls & Error Handling</div>
-                      <div style="font-size:0.8rem; color:var(--text-muted);">Recorded Aug 24, 2026 • 1h 35m • Instructor: Gautam Chaskar</div>
-                    </div>
-                    <button class="btn btn-secondary" onclick="showToast('▶ Video Player: Playing Lecture 3.3', 'info')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
-                      ▶ Play Video
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- BATCH 2: EVENING BATCH -->
-          <div class="batch-lms-content" id="batch-evening" style="display:none;">
-            <div class="qa-card">
-              <span class="badge badge-primary">Evening Batch (08:30 PM) Archive</span>
-              <h4 style="font-size:1.1rem; margin-top:0.5rem;">Salesforce Evening Prime Recorded Sessions</h4>
-              <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">
-                All evening batch recordings are synced automatically after live completion.
-              </p>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem;">
               
-              <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
-                <div>
-                  <div style="font-weight:700;">Evening Session 1: Org Setup & User Administration</div>
-                  <div style="font-size:0.8rem; color:var(--text-muted);">Recorded Aug 10, 2026 • 1h 30m</div>
+              <!-- Tile Box 1 -->
+              <div class="batch-card bg-glass" style="cursor:pointer; border:1px solid var(--glass-border);" onclick="openBatchLectures('batch-morning', 'Salesforce Morning Batch (07:30 AM)')">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem;">
+                  <span class="badge badge-emerald badge-pulse">Active Enrolled</span>
+                  <span style="font-size:1.5rem;">☀️</span>
                 </div>
-                <button class="btn btn-secondary" onclick="showToast('▶ Playing Evening Session 1', 'info')">▶ Play</button>
+
+                <h4 style="font-size:1.2rem; font-weight:800; margin-bottom:0.4rem;">Salesforce Morning Batch</h4>
+                <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:1.25rem;">Slot: 07:30 AM - 09:00 AM • Mon to Fri</p>
+
+                <div style="background:var(--bg-secondary); padding:0.85rem; border-radius:var(--radius-sm); margin-bottom:1.25rem; border:1px solid var(--glass-border);">
+                  <div style="display:flex; justify-content:space-between; font-size:0.8rem; font-weight:600; margin-bottom:0.3rem;">
+                    <span>Course Progress</span>
+                    <span style="color:var(--accent-emerald);">68% Completed</span>
+                  </div>
+                  <div class="progress-bar-wrap" style="height:8px; margin:0;">
+                    <div class="progress-bar-fill" style="width:68%;"></div>
+                  </div>
+                  <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.4rem;">
+                    13 Recorded Lectures • 18.5 Hours
+                  </div>
+                </div>
+
+                <button class="btn btn-primary btn-block" style="padding:0.6rem 1rem; font-size:0.875rem;">
+                  📂 Open Batch & Lectures →
+                </button>
               </div>
+
+              <!-- Tile Box 2 -->
+              <div class="batch-card bg-glass" style="cursor:pointer; border:1px solid var(--glass-border);" onclick="openBatchLectures('batch-evening', 'Salesforce Evening Batch (08:30 PM)')">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem;">
+                  <span class="badge badge-primary">Unlocked Archive</span>
+                  <span style="font-size:1.5rem;">🌙</span>
+                </div>
+
+                <h4 style="font-size:1.2rem; font-weight:800; margin-bottom:0.4rem;">Salesforce Evening Prime</h4>
+                <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:1.25rem;">Slot: 08:30 PM - 10:00 PM • Mon to Fri</p>
+
+                <div style="background:var(--bg-secondary); padding:0.85rem; border-radius:var(--radius-sm); margin-bottom:1.25rem; border:1px solid var(--glass-border);">
+                  <div style="display:flex; justify-content:space-between; font-size:0.8rem; font-weight:600; margin-bottom:0.3rem;">
+                    <span>Course Progress</span>
+                    <span style="color:var(--accent-primary);">100% Completed</span>
+                  </div>
+                  <div class="progress-bar-wrap" style="height:8px; margin:0;">
+                    <div class="progress-bar-fill" style="width:100%;"></div>
+                  </div>
+                  <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.4rem;">
+                    12 Recorded Lectures • 16.0 Hours
+                  </div>
+                </div>
+
+                <button class="btn btn-secondary btn-block" style="padding:0.6rem 1rem; font-size:0.875rem;">
+                  📂 Open Batch & Lectures →
+                </button>
+              </div>
+
+              <!-- Tile Box 3 -->
+              <div class="batch-card bg-glass" style="cursor:pointer; border:1px solid var(--glass-border);" onclick="openBatchLectures('batch-weekend', 'Salesforce Weekend Fast-Track')">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem;">
+                  <span class="badge badge-amber">Unlocked Archive</span>
+                  <span style="font-size:1.5rem;">⚡</span>
+                </div>
+
+                <h4 style="font-size:1.2rem; font-weight:800; margin-bottom:0.4rem;">Weekend Fast-Track</h4>
+                <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:1.25rem;">Slot: 10:00 AM - 02:00 PM • Sat & Sun</p>
+
+                <div style="background:var(--bg-secondary); padding:0.85rem; border-radius:var(--radius-sm); margin-bottom:1.25rem; border:1px solid var(--glass-border);">
+                  <div style="display:flex; justify-content:space-between; font-size:0.8rem; font-weight:600; margin-bottom:0.3rem;">
+                    <span>Course Progress</span>
+                    <span style="color:var(--accent-amber);">100% Completed</span>
+                  </div>
+                  <div class="progress-bar-wrap" style="height:8px; margin:0;">
+                    <div class="progress-bar-fill" style="width:100%;"></div>
+                  </div>
+                  <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.4rem;">
+                    10 Recorded Lectures • 20.0 Hours
+                  </div>
+                </div>
+
+                <button class="btn btn-secondary btn-block" style="padding:0.6rem 1rem; font-size:0.875rem;">
+                  📂 Open Batch & Lectures →
+                </button>
+              </div>
+
             </div>
           </div>
 
-          <!-- BATCH 3: WEEKEND BATCH -->
-          <div class="batch-lms-content" id="batch-weekend" style="display:none;">
-            <div class="qa-card">
-              <span class="badge badge-amber">Weekend Fast-Track Archive</span>
-              <h4 style="font-size:1.1rem; margin-top:0.5rem;">Salesforce Weekend Intensive Recorded Sessions</h4>
-              <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">
-                Weekend 4-hour extended sessions & capstone lab recordings.
-              </p>
+          <!-- INNER BATCH LECTURES DETAIL VIEW (Hidden by default) -->
+          <div id="batchLecturesDetailView" style="display:none;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; flex-wrap:wrap; gap:1rem;">
+              <button class="btn btn-secondary" onclick="closeBatchLectures()" style="padding:0.4rem 0.9rem; font-size:0.85rem;">
+                ← Back to Enrolled Batches
+              </button>
 
-              <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
-                <div>
-                  <div style="font-weight:700;">Weekend Session 1: Flow Builder & LWC Bootcamp</div>
-                  <div style="font-size:0.8rem; color:var(--text-muted);">Recorded Aug 16, 2026 • 3h 15m</div>
+              <h3 style="font-size:1.35rem;" id="activeDetailBatchTitle">Salesforce Morning Batch (07:30 AM)</h3>
+            </div>
+
+            <!-- BATCH 1: MORNING BATCH -->
+            <div class="batch-lms-content active" id="batch-morning">
+              
+              <!-- Module 1 Accordion -->
+              <div class="accordion-item bg-glass active" style="margin-bottom:1rem;">
+                <div class="accordion-header" style="background:var(--bg-secondary);">
+                  <div class="accordion-header-left">
+                    <span class="badge badge-emerald">Enrolled</span>
+                    <div>
+                      Module 1: Salesforce Admin & Security Fundamentals
+                      <div style="font-size:0.75rem; color:var(--text-muted); font-weight:400;">4 Recorded Lectures • 5 Hours</div>
+                    </div>
+                  </div>
+                  <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </div>
-                <button class="btn btn-secondary" onclick="showToast('▶ Playing Weekend Session 1', 'info')">▶ Play</button>
+                <div class="accordion-body" style="padding-top:1rem;">
+                  <div style="display:flex; flex-direction:column; gap:0.75rem;">
+                    <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0; padding:1rem 1.25rem;">
+                      <div>
+                        <div style="font-weight:700; font-size:0.95rem;">Lecture 1.1: Cloud Architecture, Multi-Tenancy & Org Setup</div>
+                        <div style="font-size:0.8rem; color:var(--text-muted);">Recorded Aug 01, 2026 • 1h 15m • Instructor: Gautam Chaskar</div>
+                      </div>
+                      <button class="btn btn-secondary" onclick="showToast('▶ Playing Lecture 1.1', 'info')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
+                        ▶ Play Video
+                      </button>
+                    </div>
+
+                    <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0; padding:1rem 1.25rem;">
+                      <div>
+                        <div style="font-weight:700; font-size:0.95rem;">Lecture 1.2: Objects, Fields, Validation Rules & Formulas</div>
+                        <div style="font-size:0.8rem; color:var(--text-muted);">Recorded Aug 03, 2026 • 1h 30m • Instructor: Gautam Chaskar</div>
+                      </div>
+                      <button class="btn btn-secondary" onclick="showToast('▶ Playing Lecture 1.2', 'info')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
+                        ▶ Play Video
+                      </button>
+                    </div>
+
+                    <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0; padding:1rem 1.25rem;">
+                      <div>
+                        <div style="font-weight:700; font-size:0.95rem;">Lecture 1.3: Data Security Model, OWD, Roles & Permission Sets</div>
+                        <div style="font-size:0.8rem; color:var(--text-muted);">Recorded Aug 05, 2026 • 1h 45m • Instructor: Gautam Chaskar</div>
+                      </div>
+                      <button class="btn btn-secondary" onclick="showToast('▶ Playing Lecture 1.3', 'info')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
+                        ▶ Play Video
+                      </button>
+                    </div>
+
+                    <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0; padding:1rem 1.25rem;">
+                      <div>
+                        <div style="font-weight:700; font-size:0.95rem;">Lecture 1.4: Salesforce Flow Builder Masterclass & Triggered Automations</div>
+                        <div style="font-size:0.8rem; color:var(--text-muted);">Recorded Aug 08, 2026 • 1h 40m • Instructor: Gautam Chaskar</div>
+                      </div>
+                      <button class="btn btn-secondary" onclick="showToast('▶ Playing Lecture 1.4', 'info')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
+                        ▶ Play Video
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Module 2 Accordion -->
+              <div class="accordion-item bg-glass active" style="margin-bottom:1rem;">
+                <div class="accordion-header" style="background:var(--bg-secondary);">
+                  <div class="accordion-header-left">
+                    <span class="badge badge-emerald">Enrolled</span>
+                    <div>
+                      Module 2: Apex Programming & SOQL Queries
+                      <div style="font-size:0.75rem; color:var(--text-muted); font-weight:400;">5 Recorded Lectures • 7.5 Hours</div>
+                    </div>
+                  </div>
+                  <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <div class="accordion-body" style="padding-top:1rem;">
+                  <div style="display:flex; flex-direction:column; gap:0.75rem;">
+                    <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0; padding:1rem 1.25rem;">
+                      <div>
+                        <div style="font-weight:700; font-size:0.95rem;">Lecture 2.1: Apex Syntax, OOPs Concepts & Collections (Lists/Maps)</div>
+                        <div style="font-size:0.8rem; color:var(--text-muted);">Recorded Aug 12, 2026 • 1h 20m • Instructor: Gautam Chaskar</div>
+                      </div>
+                      <button class="btn btn-secondary" onclick="showToast('▶ Playing Lecture 2.1', 'info')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
+                        ▶ Play Video
+                      </button>
+                    </div>
+
+                    <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0; padding:1rem 1.25rem;">
+                      <div>
+                        <div style="font-weight:700; font-size:0.95rem;">Lecture 2.2: Apex Trigger Framework Architecture & Bulkification</div>
+                        <div style="font-size:0.8rem; color:var(--text-muted);">Recorded Aug 15, 2026 • 1h 45m • Instructor: Gautam Chaskar</div>
+                      </div>
+                      <button class="btn btn-secondary" onclick="showToast('▶ Playing Lecture 2.2', 'info')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
+                        ▶ Play Video
+                      </button>
+                    </div>
+
+                    <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0; padding:1rem 1.25rem;">
+                      <div>
+                        <div style="font-weight:700; font-size:0.95rem;">Lecture 2.3: SOQL & SOSL Relationship Query Optimization</div>
+                        <div style="font-size:0.8rem; color:var(--text-muted);">Recorded Aug 18, 2026 • 1h 30m • Instructor: Gautam Chaskar</div>
+                      </div>
+                      <button class="btn btn-secondary" onclick="showToast('▶ Playing Lecture 2.3', 'info')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
+                        ▶ Play Video
+                      </button>
+                    </div>
+
+                    <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0; padding:1rem 1.25rem;">
+                      <div>
+                        <div style="font-weight:700; font-size:0.95rem;">Lecture 2.4: Asynchronous Apex (Batch Apex, Queueable & Future)</div>
+                        <div style="font-size:0.8rem; color:var(--text-muted);">Recorded Aug 21, 2026 • 1h 40m • Instructor: Gautam Chaskar</div>
+                      </div>
+                      <button class="btn btn-secondary" onclick="showToast('▶ Playing Lecture 2.4', 'info')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
+                        ▶ Play Video
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Module 3 Accordion -->
+              <div class="accordion-item bg-glass active" style="margin-bottom:1rem;">
+                <div class="accordion-header" style="background:var(--bg-secondary);">
+                  <div class="accordion-header-left">
+                    <span class="badge badge-emerald">In Progress</span>
+                    <div>
+                      Module 3: Lightning Web Components (LWC) Architecture
+                      <div style="font-size:0.75rem; color:var(--text-muted); font-weight:400;">4 Recorded Lectures • 6 Hours</div>
+                    </div>
+                  </div>
+                  <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <div class="accordion-body" style="padding-top:1rem;">
+                  <div style="display:flex; flex-direction:column; gap:0.75rem;">
+                    <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0; padding:1rem 1.25rem;">
+                      <div>
+                        <div style="font-weight:700; font-size:0.95rem;">Lecture 3.1: Modern ES6+ JavaScript & Shadow DOM Basics</div>
+                        <div style="font-size:0.8rem; color:var(--text-muted);">Recorded Aug 22, 2026 • 1h 30m • Instructor: Gautam Chaskar</div>
+                      </div>
+                      <button class="btn btn-secondary" onclick="showToast('▶ Playing Lecture 3.1', 'info')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
+                        ▶ Play Video
+                      </button>
+                    </div>
+
+                    <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0; padding:1rem 1.25rem;">
+                      <div>
+                        <div style="font-weight:700; font-size:0.95rem;">Lecture 3.2: LWC Data Binding & Reactive @api Properties</div>
+                        <div style="font-size:0.8rem; color:var(--text-muted);">Recorded Aug 23, 2026 • 1h 20m • Instructor: Gautam Chaskar</div>
+                      </div>
+                      <button class="btn btn-secondary" onclick="showToast('▶ Playing Lecture 3.2', 'info')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
+                        ▶ Play Video
+                      </button>
+                    </div>
+
+                    <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0; padding:1rem 1.25rem;">
+                      <div>
+                        <div style="font-weight:700; font-size:0.95rem;">Lecture 3.3: LWC Imperative Apex Calls & Error Handling</div>
+                        <div style="font-size:0.8rem; color:var(--text-muted);">Recorded Aug 24, 2026 • 1h 35m • Instructor: Gautam Chaskar</div>
+                      </div>
+                      <button class="btn btn-secondary" onclick="showToast('▶ Playing Lecture 3.3', 'info')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
+                        ▶ Play Video
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- BATCH 2: EVENING BATCH -->
+            <div class="batch-lms-content" id="batch-evening" style="display:none;">
+              <div class="qa-card">
+                <span class="badge badge-primary">Evening Batch (08:30 PM) Archive</span>
+                <h4 style="font-size:1.1rem; margin-top:0.5rem;">Salesforce Evening Prime Recorded Sessions</h4>
+                <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">
+                  All evening batch recordings are synced automatically after live completion.
+                </p>
+                
+                <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                  <div>
+                    <div style="font-weight:700;">Evening Session 1: Org Setup & User Administration</div>
+                    <div style="font-size:0.8rem; color:var(--text-muted);">Recorded Aug 10, 2026 • 1h 30m</div>
+                  </div>
+                  <button class="btn btn-secondary" onclick="showToast('▶ Playing Evening Session 1', 'info')">▶ Play</button>
+                </div>
               </div>
             </div>
+
+            <!-- BATCH 3: WEEKEND BATCH -->
+            <div class="batch-lms-content" id="batch-weekend" style="display:none;">
+              <div class="qa-card">
+                <span class="badge badge-amber">Weekend Fast-Track Archive</span>
+                <h4 style="font-size:1.1rem; margin-top:0.5rem;">Salesforce Weekend Intensive Recorded Sessions</h4>
+                <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">
+                  Weekend 4-hour extended sessions & capstone lab recordings.
+                </p>
+
+                <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                  <div>
+                    <div style="font-weight:700;">Weekend Session 1: Flow Builder & LWC Bootcamp</div>
+                    <div style="font-size:0.8rem; color:var(--text-muted);">Recorded Aug 16, 2026 • 3h 15m</div>
+                  </div>
+                  <button class="btn btn-secondary" onclick="showToast('▶ Playing Weekend Session 1', 'info')">▶ Play</button>
+                </div>
+              </div>
+            </div>
+
           </div>
 
         </div>
@@ -591,28 +686,40 @@
           setTimeout(() => { window.location.href = 'index.html'; }, 600);
         });
       }
+    });
 
-      // Batch Sub-Tab Controller
-      const batchTabBtns = document.querySelectorAll('[data-batch-tab]');
+    // Batch Tiles Navigation Functions
+    function openBatchLectures(batchId, batchTitle) {
+      const tilesView = document.getElementById('enrolledBatchTilesView');
+      const detailView = document.getElementById('batchLecturesDetailView');
+      const titleEl = document.getElementById('activeDetailBatchTitle');
       const batchContents = document.querySelectorAll('.batch-lms-content');
 
-      batchTabBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const targetBatchId = btn.getAttribute('data-batch-tab');
+      if (tilesView && detailView) {
+        tilesView.style.display = 'none';
+        detailView.style.display = 'block';
+      }
 
-          batchTabBtns.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
+      if (titleEl) titleEl.textContent = batchTitle;
 
-          batchContents.forEach(c => {
-            if (c.id === targetBatchId) {
-              c.style.display = 'block';
-            } else {
-              c.style.display = 'none';
-            }
-          });
-        });
+      batchContents.forEach(c => {
+        if (c.id === batchId) {
+          c.style.display = 'block';
+        } else {
+          c.style.display = 'none';
+        }
       });
-    });
+    }
+
+    function closeBatchLectures() {
+      const tilesView = document.getElementById('enrolledBatchTilesView');
+      const detailView = document.getElementById('batchLecturesDetailView');
+
+      if (tilesView && detailView) {
+        tilesView.style.display = 'block';
+        detailView.style.display = 'none';
+      }
+    }
   </script>
 </body>
 </html>
