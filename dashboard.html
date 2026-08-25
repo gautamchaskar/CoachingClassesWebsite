@@ -707,7 +707,7 @@
     document.addEventListener('DOMContentLoaded', () => {
       const studentData = JSON.parse(localStorage.getItem('studentSession'));
       if (!studentData) {
-        window.location.href = 'index.html?auth=required';
+        window.location.href = 'index.html?auth=required#authModal';
         return;
       }
 

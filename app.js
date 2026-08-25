@@ -585,17 +585,18 @@ function initAuthManager() {
     });
   });
 
-  // Check URL query parameters (e.g. ?auth=required from dashboard redirect)
+  // Check URL query parameters & hash (e.g. ?auth=required#authModal from dashboard redirect)
   const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.get('auth') === 'required') {
-    const authModal = document.getElementById('authModal');
-    if (authModal) {
-      authModal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-    showToast('🔒 Access restricted: Please login or register to launch your Student LMS Portal.', 'info');
-    // Clean up query param from URL without reload
-    window.history.replaceState({}, document.title, window.location.pathname);
+  if (urlParams.get('auth') === 'required' || window.location.hash.includes('authModal')) {
+    setTimeout(() => {
+      const authModal = document.getElementById('authModal');
+      if (authModal) {
+        authModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+      showToast('🔒 Access Restricted: Login or Register required to launch Student LMS Portal.', 'info');
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }, 150);
   }
 
   const demoLoginBtn = document.getElementById('demoLoginBtn');
