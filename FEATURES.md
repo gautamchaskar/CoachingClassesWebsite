@@ -28,7 +28,7 @@ This document serves as the **Master Feature Registry** for the Coaching Classes
 
 ### B. Public Marketing Website (`index.html`) & Auth Flow
 - [x] **Hero Banner**: Displays 7x Certified badge, headline, and stats (98% Placement Rate, 1,500+ Mentored, ₹5,000 Special Fee).
-- [x] **Sign In / Register Button**: Header modal trigger leading to standalone `dashboard.html`.
+- [x] **Login / Register Button**: Header and mobile menu CTA button (`🔑 Login / Register`) triggering the auth modal leading to standalone `dashboard.html`.
 - [x] **One-Click Demo Student Login**: Quick login button for `Aman Sharma` (`aman.student@gmail.com`) with instant redirect to `dashboard.html`.
 
 ### C. Dedicated Personalised Student Learning Portal (`dashboard.html` / `/dashboard`)
