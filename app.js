@@ -531,40 +531,30 @@ function initCodePlayground() {
 
 /* --- SALARY ESTIMATOR --- */
 function initSalaryEstimator() {
-  const expSlider = document.getElementById('expSlider');
-  const expValue = document.getElementById('expValue');
   const projectedSalary = document.getElementById('projectedSalary');
+  const roleTitleEl = document.getElementById('projectedRoleTitle');
   const roleCards = document.querySelectorAll('.salary-role-card');
 
-  if (!expSlider || !projectedSalary) return;
+  if (!projectedSalary || !roleCards.length) return;
 
-  let activeRole = 'developer';
+  const SALARY_DATA = {
+    developer: { title: 'Salesforce Developer', range: '₹7.5 LPA - ₹28.0 LPA' },
+    ai: { title: 'AI & Agentforce Specialist', range: '₹12.0 LPA - ₹34.0 LPA' },
+    admin: { title: 'Salesforce Administrator', range: '₹5.5 LPA - ₹18.0 LPA' },
+    architect: { title: 'Technical Architect', range: '₹16.0 LPA - ₹42.0 LPA' }
+  };
 
   roleCards.forEach(card => {
     card.addEventListener('click', () => {
       roleCards.forEach(c => c.classList.remove('active'));
       card.classList.add('active');
-      activeRole = card.getAttribute('data-role') || 'developer';
-      updateSalary();
+      const roleKey = card.getAttribute('data-role') || 'developer';
+      const data = SALARY_DATA[roleKey] || SALARY_DATA.developer;
+
+      if (projectedSalary) projectedSalary.textContent = data.range;
+      if (roleTitleEl) roleTitleEl.textContent = data.title;
     });
   });
-
-  function updateSalary() {
-    const exp = parseInt(expSlider.value, 10);
-    expValue.textContent = `${exp} ${exp === 1 ? 'Year' : 'Years'}`;
-
-    let baseSalary = 7.5;
-    if (activeRole === 'admin') baseSalary = 5.5;
-    if (activeRole === 'developer') baseSalary = 7.5;
-    if (activeRole === 'ai') baseSalary = 12.0;
-    if (activeRole === 'architect') baseSalary = 16.0;
-
-    const estimatedLPA = Math.round((baseSalary + exp * 2.8) * 10) / 10;
-    projectedSalary.textContent = `₹${estimatedLPA} LPA`;
-  }
-
-  expSlider.addEventListener('input', updateSalary);
-  updateSalary();
 }
 
 /* --- STUDENT PORTAL AUTH MANAGER & STRICT GUARD --- */
