@@ -6,13 +6,13 @@
   
   <!-- SEO Best Practices -->
   <title>Gautam Chaskar Salesforce Academy - 7x Certified Lead Developer Training</title>
-  <meta name="description" content="Learn Salesforce Full-Stack Development from Gautam Chaskar, 7x Certified Salesforce Developer & Industry Architect. Live Online Batches in Admin, Apex, LWC & Integration with 100% Job Placement.">
-  <meta name="keywords" content="Gautam Chaskar, Salesforce Developer, Salesforce Training, Platform Developer II, LWC, Apex, Salesforce Coaching, Student Portal, LMS">
+  <meta name="description" content="Learn Salesforce Full-Stack Development from Gautam Chaskar, 7x Certified Salesforce Developer & Industry Architect. Live Online Batches in Admin, Apex, LWC, Agentforce AI & Integration with 100% Job Placement.">
+  <meta name="keywords" content="Gautam Chaskar, Salesforce Developer, Salesforce Training, Platform Developer II, LWC, Apex, Agentforce, Salesforce AI, Student Portal, Exam Simulator">
   <meta name="author" content="Gautam Chaskar">
   
   <!-- Open Graph -->
   <meta property="og:title" content="Gautam Chaskar Salesforce Academy - 7x Certified Lead Developer Training">
-  <meta property="og:description" content="Master Salesforce Admin, Apex, LWC, & REST APIs under the direct mentorship of 7x Certified Salesforce Developer Gautam Chaskar. Includes Student LMS Portal.">
+  <meta property="og:description" content="Master Salesforce Admin, Apex, LWC, Agentforce AI & REST APIs under the direct mentorship of 7x Certified Salesforce Developer Gautam Chaskar. Includes Certification Exam Simulator & Code Playground.">
   <meta property="og:type" content="website">
 
   <!-- Favicon SVG -->
@@ -40,11 +40,12 @@
       <ul class="nav-links">
         <li><a href="#hero" class="nav-link active">Home</a></li>
         <li><a href="#mentor" class="nav-link">Instructor</a></li>
-        <li><a href="#batches" class="nav-link">Live Batches</a></li>
+        <li><a href="#batches" class="nav-link">Batches</a></li>
         <li><a href="#curriculum" class="nav-link">Syllabus</a></li>
+        <li><a href="#exam-simulator" class="nav-link">Exam Quiz</a></li>
+        <li><a href="#code-playground" class="nav-link">Code IDE</a></li>
         <li><a href="#portal" class="nav-link" style="color:var(--accent-emerald);">Student LMS</a></li>
-        <li><a href="#calculator" class="nav-link">Fee Calculator</a></li>
-        <li><a href="#faq" class="nav-link">FAQ</a></li>
+        <li><a href="#calculator" class="nav-link">Calculator</a></li>
       </ul>
 
       <div class="nav-actions">
@@ -77,9 +78,10 @@
     <a href="#mentor" class="nav-link">Instructor</a>
     <a href="#batches" class="nav-link">Live Batches</a>
     <a href="#curriculum" class="nav-link">Syllabus</a>
+    <a href="#exam-simulator" class="nav-link">Certification Simulator</a>
+    <a href="#code-playground" class="nav-link">Apex Code IDE</a>
     <a href="#portal" class="nav-link">Student LMS Portal</a>
     <a href="#calculator" class="nav-link">Fee Calculator</a>
-    <a href="#faq" class="nav-link">FAQ</a>
     <button class="btn btn-secondary btn-block" data-open-modal data-target-modal="authModal">
       👤 Student Login
     </button>
@@ -100,20 +102,20 @@
         </div>
         
         <h1 class="hero-title">
-          Master <span class="text-gradient">Salesforce</span> Development & Secure Your Dream IT Career
+          Master <span class="text-gradient">Salesforce</span> Development & Agentforce AI
         </h1>
         
         <p class="hero-description">
-          Learn directly from <strong>Gautam Chaskar</strong> (Salesforce Developer at UST). Industry-oriented 4-Month full stack training covering Salesforce Admin, Apex, LWC, and Integration with 100% Placement Assistance and Student LMS Portal.
+          Learn directly from <strong>Gautam Chaskar</strong> (Salesforce Developer at UST). Industry-oriented 4-Month full stack training covering Salesforce Admin, Apex, LWC, Agentforce AI, and Integration with 100% Placement Support.
         </p>
 
         <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:0.5rem;">
           <a href="#batches" class="btn btn-primary btn-lg">
             Explore Upcoming Batches ↓
           </a>
-          <a href="#portal" class="btn btn-secondary btn-lg">
-            🎓 Access Student LMS Dashboard
-          </a>
+          <button class="btn btn-secondary btn-lg" onclick="window.print()">
+            📄 Download Syllabus Roadmap PDF
+          </button>
         </div>
 
         <div class="hero-stats">
@@ -251,241 +253,176 @@
   </section>
 
   <!-- ==========================================================================
-       STUDENT PORTAL & LMS DASHBOARD SECTION
+       NEW SECTION 1: CERTIFICATION EXAM PRACTICE SIMULATOR
        ========================================================================== -->
-  <section class="portal-section" id="portal">
+  <section class="section" id="exam-simulator">
     <div class="container">
-      <div class="section-header" style="margin-bottom:2.5rem;">
-        <span class="section-subtitle">Student Learning Management System</span>
-        <h2 class="section-title">My Learning <span class="text-gradient">Portal</span></h2>
+      <div class="section-header">
+        <span class="section-subtitle">Test Your Knowledge</span>
+        <h2 class="section-title">Salesforce Certification <span class="text-gradient">Exam Simulator</span></h2>
         <p class="section-description">
-          Track your batch progress, join daily live Zoom classes, submit lab assignments, and ask doubts directly to Gautam Chaskar.
+          Practice official multiple-choice questions for Salesforce Administrator (ADM-201) and Platform Developer 1 (PD1) before taking the real exam.
         </p>
       </div>
 
-      <div class="portal-grid">
-        <!-- Sidebar Navigation -->
-        <div class="portal-sidebar bg-glass">
+      <div class="simulator-card bg-glass">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; flex-wrap:wrap; gap:1rem;">
           <div>
-            <div class="student-profile-header">
-              <div class="student-avatar" id="portalStudentAvatar">AS</div>
-              <div>
-                <div style="font-weight:700; font-size:1.05rem;" id="portalStudentName">Aman Sharma</div>
-                <div style="font-size:0.8rem; color:var(--text-muted);" id="portalStudentEmail">aman.student@gmail.com</div>
-              </div>
-            </div>
-
-            <ul class="portal-nav">
-              <li>
-                <button class="portal-nav-btn active" data-portal-tab="tab-overview">
-                  📊 Dashboard Overview
-                </button>
-              </li>
-              <li>
-                <button class="portal-nav-btn" data-portal-tab="tab-courses">
-                  📚 Enrolled Lectures & Video LMS
-                </button>
-              </li>
-              <li>
-                <button class="portal-nav-btn" data-portal-tab="tab-doubts">
-                  ❓ Ask Doubts & Q&A Thread
-                </button>
-              </li>
-              <li>
-                <button class="portal-nav-btn" data-portal-tab="tab-assignments">
-                  📝 Assignments & Labs
-                </button>
-              </li>
-              <li>
-                <button class="portal-nav-btn" data-portal-tab="tab-certificate">
-                  📜 Certificate Preview
-                </button>
-              </li>
-            </ul>
+            <span class="badge badge-emerald">Interactive Test Engine</span>
+            <h3 style="font-size:1.35rem; margin-top:0.3rem;">Official Certification Practice Test</h3>
           </div>
 
-          <div style="margin-top:2rem; padding-top:1.25rem; border-top:1px solid var(--glass-border);">
-            <button class="btn btn-secondary btn-block" id="logoutBtn" style="font-size:0.875rem;">
-              🚪 Logout Session
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <label style="font-size:0.875rem; font-weight:600; color:var(--text-secondary);">Select Exam Track:</label>
+            <select class="form-select" id="quizTypeSelect" style="width:auto; padding:0.5rem 1rem;">
+              <option value="admin">Salesforce Admin (ADM-201)</option>
+              <option value="pd1">Platform Developer I (PD1)</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="quizQuestionContainer">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       NEW SECTION 2: APEX & LWC INTERACTIVE CODE PLAYGROUND
+       ========================================================================== -->
+  <section class="section" id="code-playground" style="background:var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Hands-On Code Viewer</span>
+        <h2 class="section-title">Production Apex & LWC <span class="text-gradient">Code Playground</span></h2>
+        <p class="section-description">
+          Inspect production-ready Salesforce Apex Triggers, SOQL queries, and LWC component source code.
+        </p>
+      </div>
+
+      <div class="code-window" style="max-width:950px; margin:0 auto;">
+        <div class="code-header">
+          <div class="filter-tabs" style="margin-bottom:0; gap:0.5rem;">
+            <button class="tab-btn active" data-code-tab="trigger">Apex Trigger Framework</button>
+            <button class="tab-btn" data-code-tab="soql">SOQL Relationship Query</button>
+            <button class="tab-btn" data-code-tab="lwc">LWC Imperative Apex</button>
+          </div>
+
+          <button class="btn btn-secondary" id="copyCodeBtn" style="padding:0.4rem 0.9rem; font-size:0.8rem;">
+            📋 Copy Snippet
+          </button>
+        </div>
+
+        <pre class="code-body" id="codeDisplay">// ⚡ Production Bulkified Apex Trigger Framework
+trigger AccountTrigger on Account (before insert, before update) {
+    // Collect account names to prevent duplicate creation
+    Set<String> accountNames = new Set<String>();
+    for (Account acc : Trigger.new) {
+        if (acc.Name != null) {
+            accountNames.add(acc.Name.toLowerCase());
+        }
+    }
+    
+    // Bulk SOQL Query outside loops
+    Set<String> existingNames = new Set<String>();
+    for (Account existing : [SELECT Id, Name FROM Account WHERE Name IN :accountNames WITH USER_MODE]) {
+        existingNames.add(existing.Name.toLowerCase());
+    }
+    
+    // Add validation error if duplicate found
+    for (Account acc : Trigger.new) {
+        if (existingNames.contains(acc.Name.toLowerCase())) {
+            acc.Name.addError('An Account with this name already exists in Salesforce.');
+        }
+    }
+}</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       NEW SECTION 3: SALESFORCE CAREER & SALARY ESTIMATOR
+       ========================================================================== -->
+  <section class="section" id="salary-calculator">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Career Growth Insights</span>
+        <h2 class="section-title">Salesforce Salary & <span class="text-gradient">Growth Estimator</span></h2>
+        <p class="section-description">
+          See the average CTC packages earned by Salesforce professionals in India based on role and experience.
+        </p>
+      </div>
+
+      <div class="salary-card bg-glass">
+        <div class="calc-grid">
+          <div>
+            <h3 style="font-size:1.4rem; margin-bottom:1.25rem;">Select Role & Experience</h3>
+
+            <div class="form-group">
+              <label class="form-label">Salesforce Career Track</label>
+              <select class="form-select" id="salaryRoleSelect">
+                <option value="developer">Salesforce Developer (Apex / LWC)</option>
+                <option value="admin">Salesforce Administrator</option>
+                <option value="ai">Salesforce AI & Agentforce Specialist</option>
+                <option value="architect">Technical / Application Architect</option>
+              </select>
+            </div>
+
+            <div class="calc-slider-group">
+              <div class="calc-slider-header">
+                <span>Years of Relevant Experience:</span>
+                <span id="expValue" class="text-gradient" style="font-weight:700;">2 Years</span>
+              </div>
+              <input type="range" min="0" max="8" value="2" class="calc-slider" id="expSlider">
+            </div>
+          </div>
+
+          <div class="calc-result-box">
+            <div style="font-size:0.9rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.05em;">Projected Average Package</div>
+            <div class="calc-result-amount" id="projectedSalary" style="color:var(--accent-emerald);">₹13.1 LPA</div>
+            <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1.25rem;">
+              Based on Indian IT market benchmarks (Deloitte, UST, Accenture, TCS).
+            </p>
+
+            <button class="btn btn-primary btn-block" data-open-modal data-target-modal="enrollModal" data-batch="Salary Estimator Consultation">
+              Book Career Roadmap Call
             </button>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Main Dashboard Content -->
-        <div class="portal-content bg-glass">
-          
-          <!-- TAB 1: OVERVIEW -->
-          <div class="portal-tab-content active" id="tab-overview">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; flex-wrap:wrap; gap:1rem;">
-              <div>
-                <h3 style="font-size:1.5rem;">Welcome back, Student! 👋</h3>
-                <p style="font-size:0.9rem; color:var(--text-secondary);" id="portalStudentBatch">
-                  Active Enrolled Batch: Salesforce Morning Batch (07:30 AM)
-                </p>
-              </div>
-
-              <a href="https://zoom.us" target="_blank" class="btn btn-primary" style="box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);">
-                🔴 Join Live Zoom Class (Starts in 45m)
-              </a>
-            </div>
-
-            <!-- Progress Card -->
-            <div style="background:var(--bg-secondary); padding:1.5rem; border-radius:var(--radius-md); border:1px solid var(--glass-border); margin-bottom:1.75rem;">
-              <div style="display:flex; justify-content:space-between; font-weight:700; margin-bottom:0.4rem;">
-                <span>Overall Batch Progress</span>
-                <span id="portalProgressText" style="color:var(--accent-emerald);">68% Completed</span>
-              </div>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar-fill" id="portalProgressBar" style="width:68%;"></div>
-              </div>
-              <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:1rem; margin-top:1rem; text-align:center;">
-                <div style="background:rgba(59,130,246,0.1); padding:0.75rem; border-radius:var(--radius-sm);">
-                  <div style="font-size:1.25rem; font-weight:800; color:var(--accent-primary);">3 / 5</div>
-                  <div style="font-size:0.75rem; color:var(--text-muted);">Modules Completed</div>
-                </div>
-                <div style="background:rgba(16,185,129,0.1); padding:0.75rem; border-radius:var(--radius-sm);">
-                  <div style="font-size:1.25rem; font-weight:800; color:var(--accent-emerald);">42 Hours</div>
-                  <div style="font-size:0.75rem; color:var(--text-muted);">Hours Learned</div>
-                </div>
-                <div style="background:rgba(245,158,11,0.1); padding:0.75rem; border-radius:var(--radius-sm);">
-                  <div style="font-size:1.25rem; font-weight:800; color:var(--accent-amber);">96%</div>
-                  <div style="font-size:0.75rem; color:var(--text-muted);">Live Attendance</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Upcoming Milestone -->
-            <h4 style="font-size:1.1rem; margin-bottom:0.75rem;">Current Learning Objective</h4>
-            <div class="qa-card" style="border-left: 4px solid var(--accent-primary);">
-              <div style="font-weight:700; color:var(--text-primary); margin-bottom:0.25rem;">Module 3: Lightning Web Components (LWC) Architecture</div>
-              <p style="font-size:0.9rem; color:var(--text-secondary);">
-                Currently covering @wire service, imperative Apex calls, and custom event communication across parent-child LWC components.
-              </p>
-            </div>
-          </div>
-
-          <!-- TAB 2: ENROLLED LECTURES -->
-          <div class="portal-tab-content" id="tab-courses">
-            <h3 style="font-size:1.4rem; margin-bottom:1.25rem;">Recorded Sessions & LMS Playlist</h3>
-            
-            <div style="display:flex; flex-direction:column; gap:1rem;">
-              <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center;">
-                <div>
-                  <div style="font-weight:700; font-size:1.05rem;">Session 14: LWC Imperative Apex & Error Handling</div>
-                  <div style="font-size:0.85rem; color:var(--text-muted);">Recorded on Aug 24, 2026 • 1h 35m • HD Video</div>
-                </div>
-                <button class="btn btn-secondary" onclick="showToast('▶ Video Player: Playing Session 14 Recording', 'info')">
-                  ▶ Watch Recording
-                </button>
-              </div>
-
-              <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center;">
-                <div>
-                  <div style="font-weight:700; font-size:1.05rem;">Session 13: LWC Data Binding & Reactive @api Properties</div>
-                  <div style="font-size:0.85rem; color:var(--text-muted);">Recorded on Aug 23, 2026 • 1h 20m • HD Video</div>
-                </div>
-                <button class="btn btn-secondary" onclick="showToast('▶ Video Player: Playing Session 13 Recording', 'info')">
-                  ▶ Watch Recording
-                </button>
-              </div>
-
-              <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center;">
-                <div>
-                  <div style="font-weight:700; font-size:1.05rem;">Session 12: Apex Triggers Context Variables & Bulkification</div>
-                  <div style="font-size:0.85rem; color:var(--text-muted);">Recorded on Aug 21, 2026 • 1h 45m • HD Video</div>
-                </div>
-                <button class="btn btn-secondary" onclick="showToast('▶ Video Player: Playing Session 12 Recording', 'info')">
-                  ▶ Watch Recording
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- TAB 3: DOUBTS & Q&A THREAD -->
-          <div class="portal-tab-content" id="tab-doubts">
-            <h3 style="font-size:1.4rem; margin-bottom:1rem;">Ask Gautam Chaskar a Doubt</h3>
-            
-            <form id="askDoubtForm" style="margin-bottom:2rem; background:var(--bg-secondary); padding:1.5rem; border-radius:var(--radius-md); border:1px solid var(--glass-border);">
-              <div class="form-group">
-                <label class="form-label">Syllabus Topic</label>
-                <select class="form-select" id="doubtTopic" required>
-                  <option value="Apex Triggers">Apex Triggers & Frameworks</option>
-                  <option value="Lightning Web Components">Lightning Web Components (LWC)</option>
-                  <option value="SOQL & SOSL">SOQL & SOSL Performance</option>
-                  <option value="Salesforce Admin">Salesforce Admin & Flows</option>
-                  <option value="REST/SOAP Integration">REST/SOAP Integration Architecture</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label">Your Question / Issue</label>
-                <textarea class="form-textarea" id="doubtQuestion" rows="3" placeholder="Describe your doubt or paste error message..." required></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-primary">
-                📩 Post Question to Gautam
-              </button>
-            </form>
-
-            <h4 style="font-size:1.1rem; margin-bottom:1rem;">Your Q&A History & Answers</h4>
-            <div id="doubtsThreadContainer">
-              <!-- Rendered via JS -->
-            </div>
-          </div>
-
-          <!-- TAB 4: ASSIGNMENTS & LABS -->
-          <div class="portal-tab-content" id="tab-assignments">
-            <h3 style="font-size:1.4rem; margin-bottom:1rem;">Hands-on Lab Assignments</h3>
-            
-            <form id="assignmentForm" style="margin-bottom:2rem; background:var(--bg-secondary); padding:1.5rem; border-radius:var(--radius-md); border:1px solid var(--glass-border);">
-              <h4 style="font-size:1.05rem; margin-bottom:0.75rem;">Submit Pending Lab: Lab 3 (LWC Component)</h4>
-              
-              <div class="form-group">
-                <label class="form-label">GitHub Repository URL / Sandbox Org Link</label>
-                <input type="url" class="form-input" id="assignmentRepo" placeholder="https://github.com/yourusername/lwc-weather-component" required>
-              </div>
-
-              <button type="submit" class="btn btn-primary">
-                🚀 Submit Assignment
-              </button>
-            </form>
-
-            <h4 style="font-size:1.1rem; margin-bottom:1rem;">Assignment Submission Status</h4>
-            <div id="assignmentsContainer">
-              <!-- Rendered via JS -->
-            </div>
-          </div>
-
-          <!-- TAB 5: CERTIFICATE PREVIEW -->
-          <div class="portal-tab-content" id="tab-certificate">
-            <h3 style="font-size:1.4rem; margin-bottom:0.5rem;">Salesforce Full-Stack Developer Certificate</h3>
-            <p style="font-size:0.875rem; color:var(--text-secondary);">
-              Your official completion certificate will be generated upon reaching 100% course progress.
-            </p>
-
-            <div class="certificate-frame">
-              <div style="font-size:0.9rem; color:var(--accent-primary); letter-spacing:0.15em; font-weight:700; text-transform:uppercase;">GAUTAM CHASKAR SALESFORCE ACADEMY</div>
-              <h2 style="font-size:2rem; font-family:var(--font-heading); margin:1rem 0; color:var(--text-primary);">Certificate of Excellence</h2>
-              <p style="font-size:0.95rem; color:var(--text-secondary);">This is to certify that</p>
-              <h3 style="font-size:1.75rem; color:var(--accent-emerald); margin:0.5rem 0;" id="certStudentName">Aman Sharma</h3>
-              <p style="font-size:0.95rem; color:var(--text-secondary); max-width:550px; margin:0 auto 1.5rem auto;">
-                has successfully completed the 4-Month Full Stack Salesforce Developer Program covering Salesforce Admin, Apex, LWC, & REST API Integration.
-              </p>
-
-              <div style="display:flex; justify-content:space-around; align-items:flex-end; margin-top:2.5rem; padding-top:1.5rem; border-top:1px solid var(--glass-border);">
-                <div>
-                  <div style="font-family:'Courier New', monospace; font-weight:700; font-size:1.1rem; color:var(--text-primary);">Gautam Chaskar</div>
-                  <div style="font-size:0.75rem; color:var(--text-muted);">7x Certified Salesforce Lead Mentor</div>
-                </div>
-                <div>
-                  <div style="font-weight:700; font-size:0.85rem; color:var(--text-primary);">VERIFIED ID: GCSA-2026-8842</div>
-                  <div style="font-size:0.75rem; color:var(--text-muted);">Issue Date: Sept 2026</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
+  <!-- ==========================================================================
+       Hiring Partners / Alumni Ticker
+       ========================================================================== -->
+  <section class="ticker-section">
+    <div class="ticker-wrap">
+      <div class="ticker-item">
+        <svg style="width:20px;height:20px;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+        Direct Referrals to UST & Top MNCs
+      </div>
+      <div class="ticker-item">
+        <svg style="width:20px;height:20px;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+        Alumni Placed at Deloitte, Accenture & TCS
+      </div>
+      <div class="ticker-item">
+        <svg style="width:20px;height:20px;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+        100% Placement Assistance & Mock Interviews
+      </div>
+      <div class="ticker-item">
+        <svg style="width:20px;height:20px;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+        Average Package ₹6.5 LPA - ₹14 LPA
+      </div>
+      <div class="ticker-item">
+        <svg style="width:20px;height:20px;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+        Capgemini & Cognizant Alumni Network
+      </div>
+      <!-- Duplicate for seamless ticker -->
+      <div class="ticker-item">
+        <svg style="width:20px;height:20px;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+        Direct Referrals to UST & Top MNCs
       </div>
     </div>
   </section>
@@ -493,7 +430,7 @@
   <!-- ==========================================================================
        Live Batches Section
        ========================================================================== -->
-  <section class="section" id="batches" style="background:var(--bg-secondary);">
+  <section class="section" id="batches">
     <div class="container">
       <div class="section-header">
         <span class="section-subtitle">Flexible Schedule Options</span>
@@ -665,7 +602,7 @@
   <!-- ==========================================================================
        Curriculum / Syllabus Section
        ========================================================================== -->
-  <section class="section" id="curriculum">
+  <section class="section" id="curriculum" style="background:var(--bg-secondary);">
     <div class="container">
       <div class="section-header">
         <span class="section-subtitle">Comprehensive Roadmap</span>
@@ -825,14 +762,44 @@
           </div>
         </div>
 
-        <!-- Module 5 -->
+        <!-- NEW Module 5: AGENTFORCE & AI -->
         <div class="accordion-item bg-glass">
           <div class="accordion-header">
             <div class="accordion-header-left">
-              <div class="module-number">05</div>
+              <div class="module-number" style="background:var(--gradient-cyan);">05</div>
+              <div>
+                Agentforce, Einstein AI & Data Cloud (2026 Special Edition)
+                <div style="font-size:0.8rem; color:var(--text-muted); font-weight:400;">Module 5 • Weeks 15 to 16</div>
+              </div>
+            </div>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </div>
+          <div class="accordion-body">
+            <ul class="topic-list">
+              <li class="topic-item">
+                <svg style="width:18px;height:18px" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                Agentforce Autonomous AI Agents & Custom Action Setup
+              </li>
+              <li class="topic-item">
+                <svg style="width:18px;height:18px" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                Salesforce Prompt Builder & Grounding AI Models with CRM Data
+              </li>
+              <li class="topic-item">
+                <svg style="width:18px;height:18px" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                Data Cloud Vector Search & RAG (Retrieval-Augmented Generation) Architecture
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Module 6 -->
+        <div class="accordion-item bg-glass">
+          <div class="accordion-header">
+            <div class="accordion-header-left">
+              <div class="module-number">06</div>
               <div>
                 Live Capstone Projects & Placement Mentorship
-                <div style="font-size:0.8rem; color:var(--text-muted); font-weight:400;">Module 5 • Weeks 15 to 16</div>
+                <div style="font-size:0.8rem; color:var(--text-muted); font-weight:400;">Module 6 • Weeks 17 to 18</div>
               </div>
             </div>
             <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -859,6 +826,247 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       STUDENT PORTAL & LMS DASHBOARD SECTION
+       ========================================================================== -->
+  <section class="portal-section" id="portal">
+    <div class="container">
+      <div class="section-header" style="margin-bottom:2.5rem;">
+        <span class="section-subtitle">Student Learning Management System</span>
+        <h2 class="section-title">My Learning <span class="text-gradient">Portal</span></h2>
+        <p class="section-description">
+          Track your batch progress, join daily live Zoom classes, submit lab assignments, and ask doubts directly to Gautam Chaskar.
+        </p>
+      </div>
+
+      <div class="portal-grid">
+        <!-- Sidebar Navigation -->
+        <div class="portal-sidebar bg-glass">
+          <div>
+            <div class="student-profile-header">
+              <div class="student-avatar" id="portalStudentAvatar">AS</div>
+              <div>
+                <div style="font-weight:700; font-size:1.05rem;" id="portalStudentName">Aman Sharma</div>
+                <div style="font-size:0.8rem; color:var(--text-muted);" id="portalStudentEmail">aman.student@gmail.com</div>
+              </div>
+            </div>
+
+            <ul class="portal-nav">
+              <li>
+                <button class="portal-nav-btn active" data-portal-tab="tab-overview">
+                  📊 Dashboard Overview
+                </button>
+              </li>
+              <li>
+                <button class="portal-nav-btn" data-portal-tab="tab-courses">
+                  📚 Enrolled Lectures & Video LMS
+                </button>
+              </li>
+              <li>
+                <button class="portal-nav-btn" data-portal-tab="tab-doubts">
+                  ❓ Ask Doubts & Q&A Thread
+                </button>
+              </li>
+              <li>
+                <button class="portal-nav-btn" data-portal-tab="tab-assignments">
+                  📝 Assignments & Labs
+                </button>
+              </li>
+              <li>
+                <button class="portal-nav-btn" data-portal-tab="tab-certificate">
+                  📜 Certificate Preview
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div style="margin-top:2rem; padding-top:1.25rem; border-top:1px solid var(--glass-border);">
+            <button class="btn btn-secondary btn-block" id="logoutBtn" style="font-size:0.875rem;">
+              🚪 Logout Session
+            </button>
+          </div>
+        </div>
+
+        <!-- Main Dashboard Content -->
+        <div class="portal-content bg-glass">
+          
+          <!-- TAB 1: OVERVIEW -->
+          <div class="portal-tab-content active" id="tab-overview">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; flex-wrap:wrap; gap:1rem;">
+              <div>
+                <h3 style="font-size:1.5rem;">Welcome back, Student! 👋</h3>
+                <p style="font-size:0.9rem; color:var(--text-secondary);" id="portalStudentBatch">
+                  Active Enrolled Batch: Salesforce Morning Batch (07:30 AM)
+                </p>
+              </div>
+
+              <a href="https://zoom.us" target="_blank" class="btn btn-primary" style="box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);">
+                🔴 Join Live Zoom Class (Starts in 45m)
+              </a>
+            </div>
+
+            <!-- Progress Card -->
+            <div style="background:var(--bg-secondary); padding:1.5rem; border-radius:var(--radius-md); border:1px solid var(--glass-border); margin-bottom:1.75rem;">
+              <div style="display:flex; justify-content:space-between; font-weight:700; margin-bottom:0.4rem;">
+                <span>Overall Batch Progress</span>
+                <span id="portalProgressText" style="color:var(--accent-emerald);">68% Completed</span>
+              </div>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar-fill" id="portalProgressBar" style="width:68%;"></div>
+              </div>
+              <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:1rem; margin-top:1rem; text-align:center;">
+                <div style="background:rgba(59,130,246,0.1); padding:0.75rem; border-radius:var(--radius-sm);">
+                  <div style="font-size:1.25rem; font-weight:800; color:var(--accent-primary);">3 / 5</div>
+                  <div style="font-size:0.75rem; color:var(--text-muted);">Modules Completed</div>
+                </div>
+                <div style="background:rgba(16,185,129,0.1); padding:0.75rem; border-radius:var(--radius-sm);">
+                  <div style="font-size:1.25rem; font-weight:800; color:var(--accent-emerald);">42 Hours</div>
+                  <div style="font-size:0.75rem; color:var(--text-muted);">Hours Learned</div>
+                </div>
+                <div style="background:rgba(245,158,11,0.1); padding:0.75rem; border-radius:var(--radius-sm);">
+                  <div style="font-size:1.25rem; font-weight:800; color:var(--accent-amber);">96%</div>
+                  <div style="font-size:0.75rem; color:var(--text-muted);">Live Attendance</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Upcoming Milestone -->
+            <h4 style="font-size:1.1rem; margin-bottom:0.75rem;">Current Learning Objective</h4>
+            <div class="qa-card" style="border-left: 4px solid var(--accent-primary);">
+              <div style="font-weight:700; color:var(--text-primary); margin-bottom:0.25rem;">Module 3: Lightning Web Components (LWC) Architecture</div>
+              <p style="font-size:0.9rem; color:var(--text-secondary);">
+                Currently covering @wire service, imperative Apex calls, and custom event communication across parent-child LWC components.
+              </p>
+            </div>
+          </div>
+
+          <!-- TAB 2: ENROLLED LECTURES -->
+          <div class="portal-tab-content" id="tab-courses">
+            <h3 style="font-size:1.4rem; margin-bottom:1.25rem;">Recorded Sessions & LMS Playlist</h3>
+            
+            <div style="display:flex; flex-direction:column; gap:1rem;">
+              <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                  <div style="font-weight:700; font-size:1.05rem;">Session 14: LWC Imperative Apex & Error Handling</div>
+                  <div style="font-size:0.85rem; color:var(--text-muted);">Recorded on Aug 24, 2026 • 1h 35m • HD Video</div>
+                </div>
+                <button class="btn btn-secondary" onclick="showToast('▶ Video Player: Playing Session 14 Recording', 'info')">
+                  ▶ Watch Recording
+                </button>
+              </div>
+
+              <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                  <div style="font-weight:700; font-size:1.05rem;">Session 13: LWC Data Binding & Reactive @api Properties</div>
+                  <div style="font-size:0.85rem; color:var(--text-muted);">Recorded on Aug 23, 2026 • 1h 20m • HD Video</div>
+                </div>
+                <button class="btn btn-secondary" onclick="showToast('▶ Video Player: Playing Session 13 Recording', 'info')">
+                  ▶ Watch Recording
+                </button>
+              </div>
+
+              <div class="qa-card" style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                  <div style="font-weight:700; font-size:1.05rem;">Session 12: Apex Triggers Context Variables & Bulkification</div>
+                  <div style="font-size:0.85rem; color:var(--text-muted);">Recorded on Aug 21, 2026 • 1h 45m • HD Video</div>
+                </div>
+                <button class="btn btn-secondary" onclick="showToast('▶ Video Player: Playing Session 12 Recording', 'info')">
+                  ▶ Watch Recording
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 3: DOUBTS & Q&A THREAD -->
+          <div class="portal-tab-content" id="tab-doubts">
+            <h3 style="font-size:1.4rem; margin-bottom:1rem;">Ask Gautam Chaskar a Doubt</h3>
+            
+            <form id="askDoubtForm" style="margin-bottom:2rem; background:var(--bg-secondary); padding:1.5rem; border-radius:var(--radius-md); border:1px solid var(--glass-border);">
+              <div class="form-group">
+                <label class="form-label">Syllabus Topic</label>
+                <select class="form-select" id="doubtTopic" required>
+                  <option value="Apex Triggers">Apex Triggers & Frameworks</option>
+                  <option value="Lightning Web Components">Lightning Web Components (LWC)</option>
+                  <option value="Agentforce AI">Agentforce AI & Prompt Builder</option>
+                  <option value="SOQL & SOSL">SOQL & SOSL Performance</option>
+                  <option value="Salesforce Admin">Salesforce Admin & Flows</option>
+                  <option value="REST/SOAP Integration">REST/SOAP Integration Architecture</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Your Question / Issue</label>
+                <textarea class="form-textarea" id="doubtQuestion" rows="3" placeholder="Describe your doubt or paste error message..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary">
+                📩 Post Question to Gautam
+              </button>
+            </form>
+
+            <h4 style="font-size:1.1rem; margin-bottom:1rem;">Your Q&A History & Answers</h4>
+            <div id="doubtsThreadContainer">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <!-- TAB 4: ASSIGNMENTS & LABS -->
+          <div class="portal-tab-content" id="tab-assignments">
+            <h3 style="font-size:1.4rem; margin-bottom:1rem;">Hands-on Lab Assignments</h3>
+            
+            <form id="assignmentForm" style="margin-bottom:2rem; background:var(--bg-secondary); padding:1.5rem; border-radius:var(--radius-md); border:1px solid var(--glass-border);">
+              <h4 style="font-size:1.05rem; margin-bottom:0.75rem;">Submit Pending Lab: Lab 3 (LWC Component)</h4>
+              
+              <div class="form-group">
+                <label class="form-label">GitHub Repository URL / Sandbox Org Link</label>
+                <input type="url" class="form-input" id="assignmentRepo" placeholder="https://github.com/yourusername/lwc-weather-component" required>
+              </div>
+
+              <button type="submit" class="btn btn-primary">
+                🚀 Submit Assignment
+              </button>
+            </form>
+
+            <h4 style="font-size:1.1rem; margin-bottom:1rem;">Assignment Submission Status</h4>
+            <div id="assignmentsContainer">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <!-- TAB 5: CERTIFICATE PREVIEW -->
+          <div class="portal-tab-content" id="tab-certificate">
+            <h3 style="font-size:1.4rem; margin-bottom:0.5rem;">Salesforce Full-Stack Developer Certificate</h3>
+            <p style="font-size:0.875rem; color:var(--text-secondary);">
+              Your official completion certificate will be generated upon reaching 100% course progress.
+            </p>
+
+            <div class="certificate-frame">
+              <div style="font-size:0.9rem; color:var(--accent-primary); letter-spacing:0.15em; font-weight:700; text-transform:uppercase;">GAUTAM CHASKAR SALESFORCE ACADEMY</div>
+              <h2 style="font-size:2rem; font-family:var(--font-heading); margin:1rem 0; color:var(--text-primary);">Certificate of Excellence</h2>
+              <p style="font-size:0.95rem; color:var(--text-secondary);">This is to certify that</p>
+              <h3 style="font-size:1.75rem; color:var(--accent-emerald); margin:0.5rem 0;" id="certStudentName">Aman Sharma</h3>
+              <p style="font-size:0.95rem; color:var(--text-secondary); max-width:550px; margin:0 auto 1.5rem auto;">
+                has successfully completed the 4-Month Full Stack Salesforce Developer Program covering Salesforce Admin, Apex, LWC, Agentforce AI & REST API Integration.
+              </p>
+
+              <div style="display:flex; justify-content:space-around; align-items:flex-end; margin-top:2.5rem; padding-top:1.5rem; border-top:1px solid var(--glass-border);">
+                <div>
+                  <div style="font-family:'Courier New', monospace; font-weight:700; font-size:1.1rem; color:var(--text-primary);">Gautam Chaskar</div>
+                  <div style="font-size:0.75rem; color:var(--text-muted);">7x Certified Salesforce Lead Mentor</div>
+                </div>
+                <div>
+                  <div style="font-weight:700; font-size:0.85rem; color:var(--text-primary);">VERIFIED ID: GCSA-2026-8842</div>
+                  <div style="font-size:0.75rem; color:var(--text-muted);">Issue Date: Sept 2026</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   </section>
@@ -931,7 +1139,7 @@
           </div>
           <div class="accordion-body">
             <p style="color:var(--text-secondary); font-size:0.95rem; line-height:1.6;">
-              No prior coding experience is required! Gautam starts from scratch with basic cloud concepts, database fundamentals, and drag-and-drop Admin configuration before gradually introducing Apex and LWC programming.
+              No prior coding experience is required! Gautam starts from scratch with basic cloud concepts, database fundamentals, and drag-and-drop Admin configuration before gradually introducing Apex, LWC, and Agentforce AI programming.
             </p>
           </div>
         </div>
@@ -999,8 +1207,9 @@
           <ul class="footer-links">
             <li><a href="#batches" class="footer-link">Live Batches</a></li>
             <li><a href="#curriculum" class="footer-link">Course Syllabus</a></li>
+            <li><a href="#exam-simulator" class="footer-link">Exam Practice Simulator</a></li>
+            <li><a href="#code-playground" class="footer-link">Apex Code Playground</a></li>
             <li><a href="#portal" class="footer-link">Student LMS Portal</a></li>
-            <li><a href="#calculator" class="footer-link">Fee Calculator</a></li>
           </ul>
         </div>
 

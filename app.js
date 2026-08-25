@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Coaching & Tech Training Website - Application Logic & Student Portal
+   Coaching & Tech Training Website - Master Application Script
    ========================================================================== */
 
 // --- Default Demo Student State ---
@@ -27,7 +27,7 @@ const DEFAULT_STUDENT = {
       question: "What is the difference between @track and @api in modern LWC?",
       date: "Aug 24, 2026",
       status: "Answered",
-      reply: "@api makes a property public so parent components can pass values. In modern LWC (API version 47+), all top-level properties are reactive by default, so @track is only needed for objects/arrays internal mutations."
+      reply: "@api makes a property public so parent components can pass values. In modern LWC (API version 47+), all top-level properties are reactive by default, so @track is only needed for internal object mutations."
     }
   ],
   assignments: [
@@ -35,6 +35,110 @@ const DEFAULT_STUDENT = {
     { id: 2, title: "Lab 2: Apex Trigger Bulkification & Test Class", due: "Aug 18, 2026", status: "Graded (95%)", repo: "https://github.com/amansharma/apex-trigger-framework" },
     { id: 3, title: "Lab 3: LWC Weather API Integration Component", due: "Sept 02, 2026", status: "Pending Submission", repo: "" }
   ]
+};
+
+// --- Question Bank for Exam Simulator ---
+const QUIZ_QUESTIONS = {
+  admin: [
+    {
+      q: "Which Salesforce feature allows an administrator to prevent duplicate Account records from being created?",
+      options: ["Validation Rules", "Matching Rules and Duplicate Rules", "Sharing Rules", "Process Builder"],
+      correct: 1,
+      explanation: "Matching Rules define how duplicate records are identified, and Duplicate Rules specify the action taken when a duplicate is found (Allow vs Block)."
+    },
+    {
+      q: "What is the maximum number of Master-Detail relationships a custom object can have in Salesforce?",
+      options: ["1", "2", "5", "Unlimited"],
+      correct: 1,
+      explanation: "A custom object can have a maximum of 2 Master-Detail relationship fields."
+    },
+    {
+      q: "An admin needs to grant temporary read-write access to a group of users for a specific custom object. Which security tool should be used?",
+      options: ["Modify Profile OWD", "Permission Set Group / Permission Set", "Change Role Hierarchy", "Validation Rule"],
+      correct: 1,
+      explanation: "Permission Sets grant additional permissions to users without changing their underlying Profile."
+    }
+  ],
+  pd1: [
+    {
+      q: "In an Apex Trigger, which context variable contains the list of new sObject records being saved?",
+      options: ["Trigger.newMap", "Trigger.old", "Trigger.new", "Trigger.target"],
+      correct: 2,
+      explanation: "Trigger.new returns a List of the new versions of the sObject records."
+    },
+    {
+      q: "What will happen if a SOQL query inside an Apex loop retrieves more than 100 queries?",
+      options: ["It executes automatically", "System throws System.LimitException: Too many SOQL queries: 101", "Records are skipped", "Queries are queued"],
+      correct: 1,
+      explanation: "Salesforce enforces a Governor Limit of 100 SOQL queries per synchronous transaction. SOQL queries must be bulkified outside loops."
+    },
+    {
+      q: "Which decorator is required in LWC to expose a JavaScript property or function as public?",
+      options: ["@track", "@wire", "@api", "@expose"],
+      correct: 2,
+      explanation: "@api decorator exposes a field or method as public so other components can access it."
+    }
+  ]
+};
+
+// --- Code Snippets Bank ---
+const CODE_SNIPPETS = {
+  trigger: `// ⚡ Production Bulkified Apex Trigger Framework
+trigger AccountTrigger on Account (before insert, before update) {
+    // Collect account names to prevent duplicate creation
+    Set<String> accountNames = new Set<String>();
+    for (Account acc : Trigger.new) {
+        if (acc.Name != null) {
+            accountNames.add(acc.Name.toLowerCase());
+        }
+    }
+    
+    // Bulk SOQL Query outside loops
+    Set<String> existingNames = new Set<String>();
+    for (Account existing : [SELECT Id, Name FROM Account WHERE Name IN :accountNames WITH USER_MODE]) {
+        existingNames.add(existing.Name.toLowerCase());
+    }
+    
+    // Add validation error if duplicate found
+    for (Account acc : Trigger.new) {
+        if (existingNames.contains(acc.Name.toLowerCase())) {
+            acc.Name.addError('An Account with this name already exists in Salesforce.');
+        }
+    }
+}`,
+  soql: `// 🔍 Optimized SOQL Query with Relationship Parent-Child Joins
+List<Contact> contacts = [
+    SELECT Id, FirstName, LastName, Email, 
+           Account.Name, Account.Industry,
+           (SELECT Id, Subject, Status FROM Cases WHERE IsClosed = false)
+    FROM Contact
+    WHERE Account.Rating = 'Hot' 
+      AND CreatedDate = LAST_N_DAYS:30
+    WITH USER_MODE
+    LIMIT 200
+];
+
+for (Contact c : contacts) {
+    System.debug('Contact: ' + c.FirstName + ' ' + c.LastName + ' | Company: ' + c.Account.Name);
+}`,
+  lwc: `// 🎨 Lightning Web Component (LWC) Imperative Apex Controller Call
+import { LightningElement, track } from 'lwc';
+import getHotAccounts from '@salesforce/apex/AccountController.getHotAccounts';
+
+export default class AccountViewer extends LightningElement {
+    @track accounts;
+    @track error;
+
+    async handleLoadAccounts() {
+        try {
+            this.accounts = await getHotAccounts();
+            this.error = undefined;
+        } catch (err) {
+            this.error = err.body ? err.body.message : err.message;
+            this.accounts = undefined;
+        }
+    }
+}`
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -48,10 +152,15 @@ document.addEventListener('DOMContentLoaded', () => {
   initForms();
   initSeatTimers();
   
-  // Student Portal Initializations
+  // Student Portal
   initAuthManager();
   initPortalTabs();
   initStudentInteractions();
+
+  // New High-Converting Features
+  initExamSimulator();
+  initCodePlayground();
+  initSalaryEstimator();
 });
 
 /* --- Theme Switcher --- */
@@ -278,6 +387,177 @@ function initSeatTimers() {
   });
 }
 
+/* --- EXAM SIMULATOR ENGINE --- */
+let currentQuizType = 'admin';
+let currentQuestionIndex = 0;
+let quizScore = 0;
+let userAnswers = [];
+
+function initExamSimulator() {
+  const quizTypeSelect = document.getElementById('quizTypeSelect');
+  if (!quizTypeSelect) return;
+
+  quizTypeSelect.addEventListener('change', (e) => {
+    currentQuizType = e.target.value;
+    resetQuiz();
+  });
+
+  resetQuiz();
+}
+
+function resetQuiz() {
+  currentQuestionIndex = 0;
+  quizScore = 0;
+  userAnswers = [];
+  renderQuizQuestion();
+}
+
+function renderQuizQuestion() {
+  const container = document.getElementById('quizQuestionContainer');
+  if (!container) return;
+
+  const questions = QUIZ_QUESTIONS[currentQuizType];
+  const q = questions[currentQuestionIndex];
+
+  container.innerHTML = `
+    <div style="margin-bottom:1.25rem;">
+      <span class="badge badge-primary">Question ${currentQuestionIndex + 1} of ${questions.length}</span>
+      <h4 style="font-size:1.15rem; margin-top:0.75rem;">${q.q}</h4>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:0.5rem;" id="quizOptionsWrap">
+      ${q.options.map((opt, idx) => `
+        <label class="quiz-option-label" onclick="selectQuizOption(${idx})">
+          <input type="radio" name="quizOpt" value="${idx}">
+          <span style="font-size:0.95rem;">${opt}</span>
+        </label>
+      `).join('')}
+    </div>
+
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-top:1.75rem;">
+      <button class="btn btn-secondary" onclick="prevQuizQuestion()" ${currentQuestionIndex === 0 ? 'disabled style="opacity:0.5;"' : ''}>
+        ← Previous
+      </button>
+
+      <button class="btn btn-primary" onclick="nextQuizQuestion()">
+        ${currentQuestionIndex === questions.length - 1 ? 'Submit & Calculate Score 🏆' : 'Next Question →'}
+      </button>
+    </div>
+  `;
+}
+
+window.selectQuizOption = function(idx) {
+  userAnswers[currentQuestionIndex] = idx;
+  const labels = document.querySelectorAll('.quiz-option-label');
+  labels.forEach((l, i) => {
+    if (i === idx) l.classList.add('selected');
+    else l.classList.remove('selected');
+  });
+};
+
+window.prevQuizQuestion = function() {
+  if (currentQuestionIndex > 0) {
+    currentQuestionIndex--;
+    renderQuizQuestion();
+  }
+};
+
+window.nextQuizQuestion = function() {
+  const questions = QUIZ_QUESTIONS[currentQuizType];
+  
+  if (userAnswers[currentQuestionIndex] === undefined) {
+    showToast('Please select an option before continuing!', 'info');
+    return;
+  }
+
+  if (currentQuestionIndex < questions.length - 1) {
+    currentQuestionIndex++;
+    renderQuizQuestion();
+  } else {
+    // Calculate Final Score
+    let score = 0;
+    questions.forEach((q, i) => {
+      if (userAnswers[i] === q.correct) score++;
+    });
+
+    const percent = Math.round((score / questions.length) * 100);
+    const passed = percent >= 65;
+
+    const container = document.getElementById('quizQuestionContainer');
+    container.innerHTML = `
+      <div style="text-align:center; padding:1.5rem;">
+        <div style="font-size:3.5rem; margin-bottom:0.5rem;">${passed ? '🏆' : '📚'}</div>
+        <h3 style="font-size:1.75rem;">Quiz Result: ${percent}% Score</h3>
+        <p style="font-size:1rem; color:var(--text-secondary); margin-bottom:1.25rem;">
+          You answered ${score} out of ${questions.length} questions correctly. 
+          ${passed ? '<span style="color:var(--accent-emerald); font-weight:700;">Congratulations! You are ready for official certification.</span>' : '<span style="color:var(--accent-amber); font-weight:700;">Good effort! Revisit Gautam\'s lectures to achieve 100%.</span>'}
+        </p>
+
+        <button class="btn btn-primary" onclick="resetQuiz()">
+          🔄 Retake Practice Simulator
+        </button>
+      </div>
+    `;
+
+    showToast(`Exam Finished! Final Score: ${percent}% (${passed ? 'PASSED' : 'NEEDS PRACTICE'})`, passed ? 'success' : 'info');
+  }
+};
+
+/* --- CODE PLAYGROUND --- */
+function initCodePlayground() {
+  const codeBox = document.getElementById('codeDisplay');
+  const tabs = document.querySelectorAll('[data-code-tab]');
+  const copyBtn = document.getElementById('copyCodeBtn');
+
+  if (!codeBox) return;
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const type = tab.getAttribute('data-code-tab');
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      codeBox.textContent = CODE_SNIPPETS[type] || '';
+    });
+  });
+
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(codeBox.textContent);
+      showToast('📋 Code snippet copied to clipboard!', 'success');
+    });
+  }
+}
+
+/* --- SALARY ESTIMATOR --- */
+function initSalaryEstimator() {
+  const expSlider = document.getElementById('expSlider');
+  const expValue = document.getElementById('expValue');
+  const projectedSalary = document.getElementById('projectedSalary');
+  const roleSelect = document.getElementById('salaryRoleSelect');
+
+  if (!expSlider || !projectedSalary) return;
+
+  function updateSalary() {
+    const exp = parseInt(expSlider.value, 10);
+    const role = roleSelect ? roleSelect.value : 'developer';
+
+    expValue.textContent = `${exp} ${exp === 1 ? 'Year' : 'Years'}`;
+
+    let baseSalary = 6.5;
+    if (role === 'developer') baseSalary = 7.5;
+    if (role === 'architect') baseSalary = 16.0;
+    if (role === 'ai') baseSalary = 12.0;
+
+    const estimatedLPA = Math.round((baseSalary + exp * 2.8) * 10) / 10;
+    projectedSalary.textContent = `₹${estimatedLPA} LPA`;
+  }
+
+  expSlider.addEventListener('input', updateSalary);
+  if (roleSelect) roleSelect.addEventListener('change', updateSalary);
+  updateSalary();
+}
+
 /* --- STUDENT PORTAL AUTH MANAGER --- */
 function initAuthManager() {
   let studentData = JSON.parse(localStorage.getItem('studentSession'));
@@ -288,7 +568,6 @@ function initAuthManager() {
 
   updateAuthUI(studentData);
 
-  // Quick Demo Student Login
   const demoLoginBtn = document.getElementById('demoLoginBtn');
   if (demoLoginBtn) {
     demoLoginBtn.addEventListener('click', () => {
@@ -306,7 +585,6 @@ function initAuthManager() {
     });
   }
 
-  // Auth Form Submit
   const authForm = document.getElementById('authForm');
   if (authForm) {
     authForm.addEventListener('submit', (e) => {
@@ -331,7 +609,6 @@ function initAuthManager() {
     });
   }
 
-  // Logout Handler
   const logoutBtn = document.getElementById('logoutBtn');
   if (logoutBtn) {
     logoutBtn.addEventListener('click', () => {
@@ -424,7 +701,6 @@ function initStudentInteractions() {
     });
   }
 
-  // Assignment Submit Handler
   const assignmentForm = document.getElementById('assignmentForm');
   if (assignmentForm) {
     assignmentForm.addEventListener('submit', (e) => {

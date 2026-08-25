@@ -24,50 +24,47 @@ This document serves as the **Master Feature Registry** for the Coaching Classes
 - [x] **Sticky Navigation Header**: Smooth backdrop blur on scroll (`.navbar.scrolled`).
 - [x] **Dark / Light Theme Toggle**: Persistent `localStorage.setItem('theme', ...)` switching design variables across all sections.
 - [x] **Mobile Drawer Menu**: Slide-down menu with quick CTAs for small screens.
-- [x] **Navigation Links**: `#hero`, `#mentor`, `#batches`, `#curriculum`, `#portal`, `#calculator`, `#faq`.
+- [x] **Navigation Links**: `#hero`, `#mentor`, `#batches`, `#curriculum`, `#exam-simulator`, `#code-playground`, `#portal`, `#salary-calculator`, `#calculator`, `#faq`.
 
 ### B. Hero & Callback Reservation Card
 - [x] **Hero Banner**: Displays 7x Certified badge, headline, and stats (98% Placement Rate, 1,500+ Mentored, ₹5,000 Special Fee).
 - [x] **Instant Seat Reservation Form**: Captures name, phone, and batch timing with toast feedback.
+- [x] **Download Syllabus PDF**: Instant 1-click syllabus roadmap download button.
 
 ### C. Lead Instructor Showcase
 - [x] **Gautam Chaskar Profile Card**: Photo avatar with initials `GC`, current UST role badge, experience metrics, and 7x Salesforce credentials badges.
 - [x] **Direct Social Buttons**: Clickable external links to LinkedIn & GitHub.
 
-### D. Live Batches Explorer & Category Filter
+### D. Certification Exam Practice Simulator (`#exam-simulator`)
+- [x] **Interactive Practice Quiz Engine**: Supports **Salesforce Admin (ADM-201)** and **Platform Developer 1 (PD1)** practice questions.
+- [x] **Option Selector & Score Calculator**: Select answers, calculate score %, and display pass/fail feedback with answers.
+
+### E. Apex & LWC Code Playground (`#code-playground`)
+- [x] **Production Source Code Viewer**: Tabbed code container showing Apex Trigger Framework, SOQL relationship query, and LWC Imperative Apex calls.
+- [x] **1-Click Copy Code Snippet**: Copies code directly to system clipboard with toast notification.
+
+### F. Salesforce Salary & Career Growth Estimator (`#salary-calculator`)
+- [x] **Role & Experience Slider**: Interactive slider calculating market CTC packages (₹6.5 LPA to ₹32.0 LPA) based on IT industry benchmarks.
+
+### G. Live Batches Explorer & Category Filter
 - [x] **Batches Grid**: Cards for Morning Batch (07:30 AM), Evening Batch (08:30 PM), and Weekend Fast-Track.
 - [x] **Category Filter Tabs**: Filter buttons (`All`, `Morning`, `Evening`, `Weekend`) showing/hiding matching batch cards without page refresh.
 - [x] **Batch Metrics**: Start date, timing, mode (Live Online + LMS), pricing discount (`₹20,000` ➔ `₹5,000`), and direct modal trigger.
 
-### E. 5-Module Syllabus Accordion
-- [x] **Interactive Accordions**: Module 1 (Admin), Module 2 (Apex), Module 3 (LWC), Module 4 (Integrations), Module 5 (Capstones).
-- [x] **Accordion Behavior**: Click to expand/collapse module topic lists.
+### H. 6-Module Syllabus Accordion (Including Agentforce AI)
+- [x] **Interactive Accordions**: Module 1 (Admin), Module 2 (Apex), Module 3 (LWC), Module 4 (Integrations), Module 5 (**Agentforce AI & Einstein AI**), Module 6 (Capstones).
 
-### F. Fee & EMI Calculator
+### I. Fee & EMI Calculator
 - [x] **Tenure Slider**: Range input (1 to 3 months) calculating monthly installment math in real-time (`discountedFee / months`).
-- [x] **Savings Display**: Calculates instant early-bird savings (`₹15,000`).
 
-### G. Student LMS Portal & Dashboard (`#portal`)
+### J. Student LMS Portal & Dashboard (`#portal`)
 - [x] **Authentication Manager**: Persistent session stored in `localStorage.setItem('studentSession', ...)`.
 - [x] **One-Click Demo Login**: Quick login button for `Aman Sharma` (`aman.student@gmail.com`).
-- [x] **Tab 1 - Dashboard Overview**:
-  - Overall Batch Progress Bar (% fill).
-  - Live Zoom Class Gateway button ("Starts in 45m").
-  - Stats: Modules Completed (3/5), Hours Learned (42 Hours), Live Attendance (96%).
-- [x] **Tab 2 - Enrolled Lectures & Recorded LMS**:
-  - List of HD recorded sessions with 1-click video playback trigger.
-- [x] **Tab 3 - Ask Doubts & Q&A Thread**:
-  - Interactive form to post questions directly to Gautam Chaskar by topic.
-  - Renders Q&A thread with `Pending Instructor Review` / `Answered` status badges and instructor replies stored in `localStorage`.
-- [x] **Tab 4 - Assignments & Labs**:
-  - Form to submit GitHub repository URLs for lab evaluation.
-  - Updates student progress dynamically upon submission.
-- [x] **Tab 5 - Certificate Preview**:
-  - Certificate of Excellence generator displaying student name and signed by Gautam Chaskar.
-
-### H. Global Interactivity & Floating Widgets
-- [x] **Toast Notification System**: Non-intrusive floating toasts for all key actions (Login, Form submission, Doubt posting, Theme switch).
-- [x] **Floating Action Buttons**: Fixed WhatsApp button (`https://wa.me/+917709171839`) and Phone Call button (`tel:+917709171839`).
+- [x] **Tab 1 - Dashboard Overview**: Progress Bar, Join Live Zoom Class link, Attendance & Hours learned stats.
+- [x] **Tab 2 - Enrolled Lectures & Recorded LMS**: HD recorded sessions playlist.
+- [x] **Tab 3 - Ask Doubts & Q&A Thread**: Submit questions directly to Gautam Chaskar by topic, view replies in `localStorage`.
+- [x] **Tab 4 - Assignments & Labs**: Submit GitHub repository URLs, dynamically update progress.
+- [x] **Tab 5 - Certificate Preview**: Dynamic Certificate of Excellence generator signed by Gautam Chaskar.
 
 ---
 
@@ -77,6 +74,6 @@ This document serves as the **Master Feature Registry** for the Coaching Classes
 > **Strict Rule**: When making edits or adding new features:
 > 1. NEVER remove any element from the Master Feature Checklist above.
 > 2. DO NOT overwrite `localStorage` keys (`theme`, `studentSession`).
-> 3. DO NOT break any IDs or data-attributes (`data-open-modal`, `data-portal-tab`, `data-filter`, `data-ajax-form`).
+> 3. DO NOT break any IDs or data-attributes (`data-open-modal`, `data-portal-tab`, `data-filter`, `data-ajax-form`, `data-code-tab`).
 > 4. ALWAYS test that the One-Click Demo Student Login works after modifying `app.js`.
 > 5. Update this `FEATURES.md` document whenever a new feature is added!
