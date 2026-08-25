@@ -33,8 +33,9 @@ This document serves as the **Master Feature Registry** for the Coaching Classes
 
 ### C. Dedicated Personalised Student Learning Portal (`dashboard.html` / `/dashboard`)
 - [x] **Standalone Dashboard Layout**: Full-screen learning workspace with sticky header, avatar badge, and sidebar navigation.
-- [x] **Tab 1 - Dashboard Overview**: Progress Bar, Join Live Zoom Class link, Attendance & Hours learned stats.
-- [x] **Tab 2 - Enrolled Lectures & Video LMS (Batch Tile Boxes Grid)**:
+- [x] **Tab 1 - Dashboard Overview**: Quick stats cards (Enrolled Courses: 3, Active Courses: 1, Completed Courses: 2), Progress Bar, Join Live Zoom Class link, Attendance & Hours learned stats.
+- [x] **Tab 2 - Enrolled Lectures & Video LMS (Batch Tile Boxes Grid & Filters)**:
+  - **KSoft Filter Pills**: `Enrolled Courses (3)`, `Active Courses (1)`, `Completed Courses (2)`.
   - **Enrolled Batch Tile Cards**: 3 interactive batch cards (`☀️ Morning Batch`, `🌙 Evening Batch`, `⚡ Weekend Fast-Track`).
   - **Course Progress Bar per Tile**: Individual progress fill %, lecture count, and total hours per batch box.
   - **Tile Click Navigation**: Clicking any Batch Tile Box opens the detailed lecture playlist inside that batch (`openBatchLectures`).

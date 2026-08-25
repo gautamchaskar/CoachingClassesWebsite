@@ -141,10 +141,37 @@
             </a>
           </div>
 
+          <!-- KSoft Style Quick Stats Header -->
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:1rem; margin-bottom:1.75rem;">
+            <div style="background:var(--bg-secondary); padding:1.25rem; border-radius:var(--radius-md); border:1px solid var(--glass-border); display:flex; align-items:center; gap:1rem;">
+              <div style="font-size:2rem; background:rgba(59,130,246,0.15); width:50px; height:50px; border-radius:var(--radius-sm); display:flex; align-items:center; justify-content:center;">📚</div>
+              <div>
+                <div style="font-size:1.5rem; font-weight:800; color:var(--text-primary);">3</div>
+                <div style="font-size:0.8rem; color:var(--text-muted);">Enrolled Courses</div>
+              </div>
+            </div>
+
+            <div style="background:var(--bg-secondary); padding:1.25rem; border-radius:var(--radius-md); border:1px solid var(--glass-border); display:flex; align-items:center; gap:1rem;">
+              <div style="font-size:2rem; background:rgba(16,185,129,0.15); width:50px; height:50px; border-radius:var(--radius-sm); display:flex; align-items:center; justify-content:center;">⚡</div>
+              <div>
+                <div style="font-size:1.5rem; font-weight:800; color:var(--accent-emerald);">1</div>
+                <div style="font-size:0.8rem; color:var(--text-muted);">Active Courses</div>
+              </div>
+            </div>
+
+            <div style="background:var(--bg-secondary); padding:1.25rem; border-radius:var(--radius-md); border:1px solid var(--glass-border); display:flex; align-items:center; gap:1rem;">
+              <div style="font-size:2rem; background:rgba(245,158,11,0.15); width:50px; height:50px; border-radius:var(--radius-sm); display:flex; align-items:center; justify-content:center;">🏆</div>
+              <div>
+                <div style="font-size:1.5rem; font-weight:800; color:var(--accent-amber);">2</div>
+                <div style="font-size:0.8rem; color:var(--text-muted);">Completed Courses</div>
+              </div>
+            </div>
+          </div>
+
           <!-- Progress Card -->
           <div style="background:var(--bg-secondary); padding:1.5rem; border-radius:var(--radius-md); border:1px solid var(--glass-border); margin-bottom:1.75rem;">
             <div style="display:flex; justify-content:space-between; font-weight:700; margin-bottom:0.4rem;">
-              <span>Overall Batch Progress</span>
+              <span>Overall Active Batch Progress</span>
               <span id="portalProgressText" style="color:var(--accent-emerald);">68% Completed</span>
             </div>
             <div class="progress-bar-wrap">
@@ -176,22 +203,31 @@
           </div>
         </div>
 
-        <!-- TAB 2: ENROLLED LECTURES (ENROLLED BATCH TILES / BOXES GRID) -->
+        <!-- TAB 2: ENROLLED LECTURES (ENROLLED BATCH TILES / BOXES GRID WITH FILTER TABS) -->
         <div class="portal-tab-content" id="tab-courses">
           
           <!-- BATCH TILES GRID VIEW -->
           <div id="enrolledBatchTilesView">
-            <div style="margin-bottom:1.75rem;">
-              <h3 style="font-size:1.5rem;">Enrolled Courses & Batch Library</h3>
-              <p style="font-size:0.875rem; color:var(--text-secondary);">
-                Select your enrolled batch tile to view its recorded lectures & module playlist.
-              </p>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; flex-wrap:wrap; gap:1rem;">
+              <div>
+                <h3 style="font-size:1.5rem;">Enrolled Courses & Batch Library</h3>
+                <p style="font-size:0.875rem; color:var(--text-secondary);">
+                  Select your batch tile box below to view lectures & course content inside.
+                </p>
+              </div>
+
+              <!-- Enrolled Courses Filter Pills (KSoft Competitor Alignment) -->
+              <div class="filter-tabs" style="margin-bottom:0; gap:0.5rem;" id="courseFilterPills">
+                <button class="tab-btn active" onclick="filterCourseTiles('all')">Enrolled Courses (3)</button>
+                <button class="tab-btn" onclick="filterCourseTiles('active')">Active Courses (1)</button>
+                <button class="tab-btn" onclick="filterCourseTiles('completed')">Completed Courses (2)</button>
+              </div>
             </div>
 
-            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem;">
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem;" id="batchTilesGrid">
               
-              <!-- Tile Box 1 -->
-              <div class="batch-card bg-glass" style="cursor:pointer; border:1px solid var(--glass-border);" onclick="openBatchLectures('batch-morning', 'Salesforce Morning Batch (07:30 AM)')">
+              <!-- Tile Box 1 (Active) -->
+              <div class="batch-card bg-glass batch-tile-item" data-status="active" style="cursor:pointer; border:1px solid var(--glass-border);" onclick="openBatchLectures('batch-morning', 'Salesforce Morning Batch (07:30 AM)')">
                 <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem;">
                   <span class="badge badge-emerald badge-pulse">Active Enrolled</span>
                   <span style="font-size:1.5rem;">☀️</span>
@@ -218,10 +254,10 @@
                 </button>
               </div>
 
-              <!-- Tile Box 2 -->
-              <div class="batch-card bg-glass" style="cursor:pointer; border:1px solid var(--glass-border);" onclick="openBatchLectures('batch-evening', 'Salesforce Evening Batch (08:30 PM)')">
+              <!-- Tile Box 2 (Completed) -->
+              <div class="batch-card bg-glass batch-tile-item" data-status="completed" style="cursor:pointer; border:1px solid var(--glass-border);" onclick="openBatchLectures('batch-evening', 'Salesforce Evening Batch (08:30 PM)')">
                 <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem;">
-                  <span class="badge badge-primary">Unlocked Archive</span>
+                  <span class="badge badge-primary">Completed Course</span>
                   <span style="font-size:1.5rem;">🌙</span>
                 </div>
 
@@ -246,10 +282,10 @@
                 </button>
               </div>
 
-              <!-- Tile Box 3 -->
-              <div class="batch-card bg-glass" style="cursor:pointer; border:1px solid var(--glass-border);" onclick="openBatchLectures('batch-weekend', 'Salesforce Weekend Fast-Track')">
+              <!-- Tile Box 3 (Completed) -->
+              <div class="batch-card bg-glass batch-tile-item" data-status="completed" style="cursor:pointer; border:1px solid var(--glass-border);" onclick="openBatchLectures('batch-weekend', 'Salesforce Weekend Fast-Track')">
                 <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem;">
-                  <span class="badge badge-amber">Unlocked Archive</span>
+                  <span class="badge badge-amber">Completed Course</span>
                   <span style="font-size:1.5rem;">⚡</span>
                 </div>
 
@@ -687,6 +723,28 @@
         });
       }
     });
+
+    // Filter Tiles by Enrolled / Active / Completed Status (KSoft Competitor Match)
+    function filterCourseTiles(filterType) {
+      const pillBtns = document.querySelectorAll('#courseFilterPills .tab-btn');
+      const tiles = document.querySelectorAll('#batchTilesGrid .batch-tile-item');
+
+      pillBtns.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      tiles.forEach(tile => {
+        const status = tile.getAttribute('data-status');
+        if (filterType === 'all') {
+          tile.style.display = 'flex';
+        } else if (filterType === 'active' && status === 'active') {
+          tile.style.display = 'flex';
+        } else if (filterType === 'completed' && status === 'completed') {
+          tile.style.display = 'flex';
+        } else {
+          tile.style.display = 'none';
+        }
+      });
+    }
 
     // Batch Tiles Navigation Functions
     function openBatchLectures(batchId, batchTitle) {
