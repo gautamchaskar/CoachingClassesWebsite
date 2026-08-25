@@ -558,12 +558,44 @@ function initSalaryEstimator() {
   updateSalary();
 }
 
-/* --- STUDENT PORTAL AUTH MANAGER --- */
+/* --- STUDENT PORTAL AUTH MANAGER & STRICT GUARD --- */
 function initAuthManager() {
   let studentData = JSON.parse(localStorage.getItem('studentSession'));
   
   if (studentData) {
     updateAuthUI(studentData);
+  }
+
+  // Intercept all Student LMS links on index.html
+  const lmsLinks = document.querySelectorAll('a[href="#portal"], .lms-access-btn');
+  lmsLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const currentSession = JSON.parse(localStorage.getItem('studentSession'));
+      if (currentSession) {
+        window.location.href = 'dashboard.html';
+      } else {
+        const authModal = document.getElementById('authModal');
+        if (authModal) {
+          authModal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+        showToast('🔑 Please login or register to launch the Student LMS Portal.', 'info');
+      }
+    });
+  });
+
+  // Check URL query parameters (e.g. ?auth=required from dashboard redirect)
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('auth') === 'required') {
+    const authModal = document.getElementById('authModal');
+    if (authModal) {
+      authModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    showToast('🔒 Access restricted: Please login or register to launch your Student LMS Portal.', 'info');
+    // Clean up query param from URL without reload
+    window.history.replaceState({}, document.title, window.location.pathname);
   }
 
   const demoLoginBtn = document.getElementById('demoLoginBtn');
@@ -576,7 +608,7 @@ function initAuthManager() {
       if (authModal) authModal.classList.remove('active');
       document.body.style.overflow = '';
       
-      showToast(`Welcome back, ${DEFAULT_STUDENT.name}! Redirecting to Personalised Learning Portal...`, 'success');
+      showToast(`Welcome back, ${DEFAULT_STUDENT.name}! Launching Personalised Student LMS...`, 'success');
       
       setTimeout(() => {
         window.location.href = 'dashboard.html';
@@ -604,7 +636,7 @@ function initAuthManager() {
       if (authModal) authModal.classList.remove('active');
       document.body.style.overflow = '';
 
-      showToast(`Logged in successfully as ${userSession.name}! Opening Dashboard...`, 'success');
+      showToast(`Logged in successfully as ${userSession.name}! Launching Student LMS Portal...`, 'success');
 
       setTimeout(() => {
         window.location.href = 'dashboard.html';

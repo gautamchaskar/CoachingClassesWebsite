@@ -707,7 +707,8 @@
     document.addEventListener('DOMContentLoaded', () => {
       const studentData = JSON.parse(localStorage.getItem('studentSession'));
       if (!studentData) {
-        localStorage.setItem('studentSession', JSON.stringify(DEFAULT_STUDENT));
+        window.location.href = 'index.html?auth=required';
+        return;
       }
 
       const logoutHeaderBtn = document.getElementById('dashboardLogoutBtn');
