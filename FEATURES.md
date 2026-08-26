@@ -27,7 +27,9 @@ This document serves as the **Master Feature Registry** for the Coaching Classes
 - [x] **Clean Header Links**: Concise marketing links (`Home`, `Instructor`, `Live Batches`, `Syllabus`).
 
 ### B. Public Marketing Website (`index.html`) & Auth Flow
-- [x] **Hero Banner**: Displays 7x Certified badge, headline, and stats (98% Placement Rate, 1,500+ Mentored, ₹5,000 Special Fee).
+- [x] **Hero Banner**: Displays 7x Certified badge, headline, stats (98% Placement Rate, 1,500+ Mentored, ₹5,000 Special Fee), and quick demo booking form.
+- [x] **Top-Positioned Salesforce Career & Salary Insights (`#salary-calculator`)**: Positioned right after the Hero section for high visitor attraction; features interactive role cards (`💻 Salesforce Developer`, `🤖 AI & Agentforce Specialist`, `⚡ Salesforce Administrator`, `🏗️ Technical Architect`) with skill tags and dynamic package ranges (₹5.5 LPA to ₹42.0 LPA).
+- [x] **Enhanced Salesforce Full Stack Live Batches (`#batches`)**: Features an Early Bird Special offer banner, live filter pills, batch timing cards (`07:30 AM IST Morning`, `08:30 PM IST Evening`, `10:00 AM IST Weekend`), seat urgency badges (`ONLY 3 SEATS LEFT`, `ENROLLING FAST`, `WEEKEND SPECIAL`), and quick seat reservation CTAs.
 - [x] **Login / Register Button**: Header and mobile menu CTA button (`🔑 Login / Register`) triggering the auth modal leading to standalone `dashboard.html`.
 - [x] **One-Click Demo Student Login**: Quick login button for `Aman Sharma` (`aman.student@gmail.com`) with instant redirect to `dashboard.html`.
 
@@ -47,7 +49,7 @@ This document serves as the **Master Feature Registry** for the Coaching Classes
   - **Dedicated Right Video Player Workspace**: Displays embedded HD Video Player, video metadata, `Mark Completed` toggle, `Notes PDF` download button, and resource tabs (Notes, Code Snippet, Ask Doubt).
 - [x] **Tab 3 - Q&A & Doubts**: Submit questions directly to Vajra Academy instructors by topic, view replies in `localStorage`.
 - [x] **Tab 4 - Assignments & Labs**: Submit GitHub repository URLs, dynamically update progress.
-- [x] **Tab 5 - Exam Simulator**: ADM-201 & PD1 certification tests.
+- [x] **Tab 5 - Exam Simulator**: ADM-201 & PD1 certification tests (Dedicated in LMS Portal).
 - [x] **Tab 6 - Orders & Invoices**: View Order `#SFDC-5196` (₹5,000.00) with printable GST receipt.
 - [x] **Tab 7 - Certificate**: Dynamic Certificate of Excellence generator issued by Vajra Academy.
 - [x] **Tab 8 - Settings**: Profile editor form for student name, email, and active batch slot.
