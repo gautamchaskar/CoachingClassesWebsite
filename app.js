@@ -358,7 +358,7 @@ function initForms() {
       }
 
       form.reset();
-      showToast(`🎉 Congratulations ${name}! Your request has been sent to Gautam Chaskar. Our counselor will call you shortly.`, 'success');
+      showToast(`🎉 Congratulations ${name}! Your request has been sent to Vajra Academy. Our counselor will call you shortly.`, 'success');
     });
   });
 }
@@ -490,7 +490,7 @@ window.nextQuizQuestion = function() {
         <h3 style="font-size:1.75rem;">Quiz Result: ${percent}% Score</h3>
         <p style="font-size:1rem; color:var(--text-secondary); margin-bottom:1.25rem;">
           You answered ${score} out of ${questions.length} questions correctly. 
-          ${passed ? '<span style="color:var(--accent-emerald); font-weight:700;">Congratulations! You are ready for official certification.</span>' : '<span style="color:var(--accent-amber); font-weight:700;">Good effort! Revisit Gautam\'s lectures to achieve 100%.</span>'}
+          ${passed ? '<span style="color:var(--accent-emerald); font-weight:700;">Congratulations! You are ready for official certification.</span>' : '<span style="color:var(--accent-amber); font-weight:700;">Good effort! Revisit Vajra Academy lectures to achieve 100%.</span>'}
         </p>
 
         <button class="btn btn-primary" onclick="resetQuiz()">
@@ -741,7 +741,7 @@ function initStudentInteractions() {
 
       doubtForm.reset();
       renderDoubtsThread(student.doubts);
-      showToast('⚡ Doubt submitted directly to Gautam Chaskar! You will receive notification on reply.', 'success');
+      showToast('⚡ Doubt submitted directly to Vajra Academy instructors! You will receive notification on reply.', 'success');
     });
   }
 
@@ -805,7 +805,7 @@ function renderDoubtsThread(doubts) {
       ${d.reply ? `
         <div class="qa-reply">
           <div style="font-size:0.825rem; font-weight:700; color:var(--accent-primary); margin-bottom:0.25rem;">
-            👨‍💻 Instructor Reply (Gautam Chaskar):
+            👨‍💻 Instructor Reply (Vajra Academy Lead):
           </div>
           <p style="font-size:0.9rem; color:var(--text-secondary); line-height:1.5;">${d.reply}</p>
         </div>

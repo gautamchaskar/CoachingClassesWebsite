@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- SEO -->
-  <title>Student Learning Portal | Gautam Chaskar Salesforce Academy</title>
-  <meta name="description" content="Personalised Student Learning Dashboard for Gautam Chaskar Salesforce Academy. Access recorded lectures batch-wise, live Zoom classes, doubt forum, assignments, and exam practice simulator.">
+  <title>Vajra Learning Portal | Salesforce & AI Training</title>
+  <meta name="description" content="Personalised Student Learning Dashboard for Vajra Academy. Access recorded lectures batch-wise, live Zoom classes, doubt forum, assignments, and exam practice simulator.">
   <meta name="robots" content="noindex, nofollow">
 
   <!-- Favicon SVG -->
@@ -22,13 +22,9 @@
        ========================================================================== -->
   <header class="navbar scrolled" style="position:sticky; top:0; background:rgba(11, 15, 25, 0.95); border-bottom:1px solid var(--glass-border); z-index:1000;">
     <div class="container-fluid nav-container">
-      <a href="index.html" class="logo">
-        <div class="logo-icon">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"></path>
-          </svg>
-        </div>
-        <span>&lt;Gautam <span class="text-gradient">Chaskar/&gt;</span> <span style="font-size:0.75rem; color:var(--accent-emerald); font-weight:600; padding:0.2rem 0.5rem; background:rgba(16,185,129,0.15); border-radius:var(--radius-full); margin-left:0.5rem;">LMS PORTAL</span></span>
+      <a href="index.html" class="logo" style="display:flex; align-items:center; gap:0.5rem;">
+        <img src="logo.png" alt="Vajra Academy Logo" style="height:34px; width:auto; border-radius:4px; filter:drop-shadow(0 0 8px rgba(59,130,246,0.5));">
+        <span style="font-weight:800; font-size:1.15rem;">Vajra <span class="text-gradient">Academy</span> <span style="font-size:0.75rem; color:var(--accent-emerald); font-weight:600; padding:0.2rem 0.5rem; background:rgba(16,185,129,0.15); border-radius:var(--radius-full); margin-left:0.35rem;">LMS PORTAL</span></span>
       </a>
 
       <div style="display:flex; align-items:center; gap:1.25rem;">
@@ -337,7 +333,7 @@
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem; flex-wrap:wrap; gap:0.5rem;">
               <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
                 <span class="badge badge-emerald" id="activeVideoModuleBadge">Module 3: LWC Architecture</span>
-                <span style="font-size:0.8rem; color:var(--text-muted);" id="activeVideoMeta">Recorded Aug 18, 2026 • 1h 45m • Instructor: Gautam Chaskar</span>
+                <span style="font-size:0.8rem; color:var(--text-muted);" id="activeVideoMeta">Recorded Aug 18, 2026 • 1h 45m • Instructor: Lead Architect</span>
               </div>
 
               <div style="display:flex; gap:0.5rem;">
@@ -367,7 +363,7 @@
               <div class="filter-tabs" style="margin-bottom:0.85rem; justify-content:flex-start; gap:0.5rem;">
                 <button class="tab-btn active" onclick="switchVideoTab('notes', this)">📝 Class Notes</button>
                 <button class="tab-btn" onclick="switchVideoTab('code', this)">💻 Code Snippet</button>
-                <button class="tab-btn" onclick="switchVideoTab('ask', this)">💬 Ask Gautam a Doubt</button>
+                <button class="tab-btn" onclick="switchVideoTab('ask', this)">💬 Ask Instructor a Doubt</button>
               </div>
 
               <!-- Video Tab 1: Notes -->
@@ -411,10 +407,10 @@ export default class AccountViewer extends LightningElement {
                 <h4 style="font-size:1.05rem; margin-bottom:0.75rem; color:var(--accent-amber);">Have a Doubt regarding this Video Lecture?</h4>
                 <form onsubmit="submitLectureDoubt(event)">
                   <div class="form-group" style="margin-bottom:0.75rem;">
-                    <textarea class="form-input" id="lectureDoubtText" rows="3" placeholder="Type your doubt here... Gautam Chaskar will respond directly in your Q&A thread." required></textarea>
+                    <textarea class="form-input" id="lectureDoubtText" rows="3" placeholder="Type your doubt here... Vajra Academy instructors will respond directly in your Q&A thread." required></textarea>
                   </div>
                   <button type="submit" class="btn btn-primary" style="padding:0.5rem 1.25rem; font-size:0.85rem;">
-                    📩 Submit Doubt to Gautam
+                    📩 Submit Doubt to Instructors
                   </button>
                 </form>
               </div>
@@ -426,7 +422,7 @@ export default class AccountViewer extends LightningElement {
 
         <!-- TAB 3: DOUBTS & Q&A THREAD -->
         <div class="portal-tab-content" id="tab-doubts">
-          <h3 style="font-size:1.4rem; margin-bottom:1rem;">Ask Gautam Chaskar a Doubt</h3>
+          <h3 style="font-size:1.4rem; margin-bottom:1rem;">Ask Vajra Academy Instructors a Doubt</h3>
           
           <form id="askDoubtForm" style="margin-bottom:2rem; background:var(--bg-secondary); padding:1.5rem; border-radius:var(--radius-md); border:1px solid var(--glass-border);">
             <div class="form-group">
@@ -447,7 +443,7 @@ export default class AccountViewer extends LightningElement {
             </div>
 
             <button type="submit" class="btn btn-primary">
-              📩 Post Question to Gautam
+              📩 Post Question to Instructors
             </button>
           </form>
 
@@ -482,7 +478,7 @@ export default class AccountViewer extends LightningElement {
 
         <!-- TAB 5: CERTIFICATION QUIZ SIMULATOR -->
         <div class="portal-tab-content" id="tab-quiz">
-          <h3 style="font-size:1.4rem; margin-bottom:1rem;">Salesforce Practice Exam Simulator</h3>
+          <h3 style="font-size:1.4rem; margin-bottom:1rem;">Salesforce Certification Practice Simulator</h3>
           
           <div class="simulator-card bg-glass" style="max-width:100%;">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; flex-wrap:wrap; gap:1rem;">
@@ -524,7 +520,7 @@ export default class AccountViewer extends LightningElement {
             </div>
 
             <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:1rem;">
-              Item: <strong>Salesforce Full Stack Live Training Batch (4 Months)</strong> • Mentor: Gautam Chaskar
+              Item: <strong>Salesforce Full Stack Live Training Batch (4 Months)</strong> • Organization: Vajra Academy
             </p>
 
             <button class="btn btn-secondary" onclick="window.print()">
@@ -541,7 +537,7 @@ export default class AccountViewer extends LightningElement {
           </p>
 
           <div class="certificate-frame">
-            <div style="font-size:0.9rem; color:var(--accent-primary); letter-spacing:0.15em; font-weight:700; text-transform:uppercase;">GAUTAM CHASKAR SALESFORCE ACADEMY</div>
+            <div style="font-size:0.9rem; color:var(--accent-primary); letter-spacing:0.15em; font-weight:700; text-transform:uppercase;">VAJRA ACADEMY SALESFORCE ACADEMY</div>
             <h2 style="font-size:2rem; font-family:var(--font-heading); margin:1rem 0; color:var(--text-primary);">Certificate of Excellence</h2>
             <p style="font-size:0.95rem; color:var(--text-secondary);">This is to certify that</p>
             <h3 style="font-size:1.75rem; color:var(--accent-emerald); margin:0.5rem 0;" id="certStudentName">Aman Sharma</h3>
@@ -551,11 +547,11 @@ export default class AccountViewer extends LightningElement {
 
             <div style="display:flex; justify-content:space-around; align-items:flex-end; margin-top:2.5rem; padding-top:1.5rem; border-top:1px solid var(--glass-border);">
               <div>
-                <div style="font-family:'Courier New', monospace; font-weight:700; font-size:1.1rem; color:var(--text-primary);">Gautam Chaskar</div>
-                <div style="font-size:0.75rem; color:var(--text-muted);">7x Certified Salesforce Lead Mentor</div>
+                <div style="font-family:'Courier New', monospace; font-weight:700; font-size:1.1rem; color:var(--text-primary);">Lead Instructor</div>
+                <div style="font-size:0.75rem; color:var(--text-muted);">Vajra Academy Certification Authority</div>
               </div>
               <div>
-                <div style="font-weight:700; font-size:0.85rem; color:var(--text-primary);">VERIFIED ID: GCSA-2026-8842</div>
+                <div style="font-weight:700; font-size:0.85rem; color:var(--text-primary);">VERIFIED ID: VAJRA-2026-8842</div>
                 <div style="font-size:0.75rem; color:var(--text-muted);">Issue Date: Sept 2026</div>
               </div>
             </div>
@@ -628,33 +624,33 @@ export default class AccountViewer extends LightningElement {
           {
             moduleTitle: 'Module 1: Admin & Security Fundamentals',
             lectures: [
-              { id: 'm-1-1', title: '1.1 Cloud Architecture & Org Setup', duration: '1h 15m', meta: 'Recorded Aug 01, 2026 • Instructor: Gautam Chaskar', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', desc: 'Overview of Salesforce multi-tenant cloud infrastructure, domain configuration, company settings, and initial org setup.' },
-              { id: 'm-1-2', title: '1.2 Objects, Fields & Validation Rules', duration: '1h 30m', meta: 'Recorded Aug 03, 2026 • Instructor: Gautam Chaskar', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', desc: 'Custom Object creation, Master-Detail vs Lookup relationships, formula fields, and complex cross-field validation rules.' },
-              { id: 'm-1-3', title: '1.3 Data Security, Roles & OWD', duration: '1h 45m', meta: 'Recorded Aug 05, 2026 • Instructor: Gautam Chaskar', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', desc: 'Org-Wide Defaults (OWD), Role Hierarchy sharing, Criteria-Based Sharing Rules, and Field-Level Security.' },
-              { id: 'm-1-4', title: '1.4 Flow Builder Masterclass', duration: '1h 40m', meta: 'Recorded Aug 08, 2026 • Instructor: Gautam Chaskar', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', desc: 'Record-Triggered Flows, Screen Flows, Fast Field Updates vs Action Execution, and Subflow orchestration.' }
+              { id: 'm-1-1', title: '1.1 Cloud Architecture & Org Setup', duration: '1h 15m', meta: 'Recorded Aug 01, 2026 • Instructor: Vajra Academy Lead', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', desc: 'Overview of Salesforce multi-tenant cloud infrastructure, domain configuration, company settings, and initial org setup.' },
+              { id: 'm-1-2', title: '1.2 Objects, Fields & Validation Rules', duration: '1h 30m', meta: 'Recorded Aug 03, 2026 • Instructor: Vajra Academy Lead', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', desc: 'Custom Object creation, Master-Detail vs Lookup relationships, formula fields, and complex cross-field validation rules.' },
+              { id: 'm-1-3', title: '1.3 Data Security, Roles & OWD', duration: '1h 45m', meta: 'Recorded Aug 05, 2026 • Instructor: Vajra Academy Lead', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', desc: 'Org-Wide Defaults (OWD), Role Hierarchy sharing, Criteria-Based Sharing Rules, and Field-Level Security.' },
+              { id: 'm-1-4', title: '1.4 Flow Builder Masterclass', duration: '1h 40m', meta: 'Recorded Aug 08, 2026 • Instructor: Vajra Academy Lead', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', desc: 'Record-Triggered Flows, Screen Flows, Fast Field Updates vs Action Execution, and Subflow orchestration.' }
             ]
           },
           {
             moduleTitle: 'Module 2: Apex Programming & SOQL Queries',
             lectures: [
-              { id: 'm-2-1', title: '2.1 Apex Syntax & OOP Collections', duration: '1h 20m', meta: 'Recorded Aug 12, 2026 • Instructor: Gautam Chaskar', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', desc: 'Apex language basics, List, Set, Map data structures, loop iteration, and Governor Limit fundamentals.' },
-              { id: 'm-2-2', title: '2.2 Apex Trigger Framework Architecture', duration: '1h 45m', meta: 'Recorded Aug 15, 2026 • Instructor: Gautam Chaskar', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', desc: 'Trigger context variables, handler pattern separation of concerns, bulkification, and recursion control.' },
-              { id: 'm-2-3', title: '2.3 SOQL & SOSL Query Optimization', duration: '1h 30m', meta: 'Recorded Aug 18, 2026 • Instructor: Gautam Chaskar', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', desc: 'Child-to-Parent & Parent-to-Child SOQL queries, WITH USER_MODE security, and index query optimization.' }
+              { id: 'm-2-1', title: '2.1 Apex Syntax & OOP Collections', duration: '1h 20m', meta: 'Recorded Aug 12, 2026 • Instructor: Vajra Academy Lead', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', desc: 'Apex language basics, List, Set, Map data structures, loop iteration, and Governor Limit fundamentals.' },
+              { id: 'm-2-2', title: '2.2 Apex Trigger Framework Architecture', duration: '1h 45m', meta: 'Recorded Aug 15, 2026 • Instructor: Vajra Academy Lead', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', desc: 'Trigger context variables, handler pattern separation of concerns, bulkification, and recursion control.' },
+              { id: 'm-2-3', title: '2.3 SOQL & SOSL Query Optimization', duration: '1h 30m', meta: 'Recorded Aug 18, 2026 • Instructor: Vajra Academy Lead', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', desc: 'Child-to-Parent & Parent-to-Child SOQL queries, WITH USER_MODE security, and index query optimization.' }
             ]
           },
           {
             moduleTitle: 'Module 3: Lightning Web Components (LWC)',
             lectures: [
-              { id: 'm-3-1', title: '3.1 Modern JavaScript & Shadow DOM', duration: '1h 30m', meta: 'Recorded Aug 22, 2026 • Instructor: Gautam Chaskar', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', desc: 'ES6 Modules, promises, async/await, arrow functions, template rendering, and Shadow DOM styling encapsulation.' },
-              { id: 'm-3-2', title: '3.2 @wire Service & Imperative Apex Calls', duration: '1h 45m', meta: 'Recorded Aug 23, 2026 • Instructor: Gautam Chaskar', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', desc: 'Reactive wire service adapters, cacheable=true Apex methods, imperative calls, and toast notification handling.' },
-              { id: 'm-3-3', title: '3.3 Component Events & LMS Communication', duration: '1h 25m', meta: 'Recorded Aug 24, 2026 • Instructor: Gautam Chaskar', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', desc: 'CustomEvent creation, event bubbling & composed settings, and Lightning Message Service (LMS) cross-DOM messaging.' }
+              { id: 'm-3-1', title: '3.1 Modern JavaScript & Shadow DOM', duration: '1h 30m', meta: 'Recorded Aug 22, 2026 • Instructor: Vajra Academy Lead', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', desc: 'ES6 Modules, promises, async/await, arrow functions, template rendering, and Shadow DOM styling encapsulation.' },
+              { id: 'm-3-2', title: '3.2 @wire Service & Imperative Apex Calls', duration: '1h 45m', meta: 'Recorded Aug 23, 2026 • Instructor: Vajra Academy Lead', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', desc: 'Reactive wire service adapters, cacheable=true Apex methods, imperative calls, and toast notification handling.' },
+              { id: 'm-3-3', title: '3.3 Component Events & LMS Communication', duration: '1h 25m', meta: 'Recorded Aug 24, 2026 • Instructor: Vajra Academy Lead', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', desc: 'CustomEvent creation, event bubbling & composed settings, and Lightning Message Service (LMS) cross-DOM messaging.' }
             ]
           },
           {
             moduleTitle: 'Module 4: Integrations & Agentforce AI',
             lectures: [
-              { id: 'm-4-1', title: '4.1 REST Web Services & Callouts', duration: '2h 10m', meta: 'Recorded Aug 25, 2026 • Instructor: Gautam Chaskar', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', desc: 'Named Credentials, Auth Providers, Http Callouts, JSON parsing, and custom REST API endpoint development.' },
-              { id: 'm-4-2', title: '4.2 Agentforce AI & Copilot Setup', duration: '1h 50m', meta: 'Recorded Aug 26, 2026 • Instructor: Gautam Chaskar', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', desc: 'Salesforce Agentforce setup, autonomous topic actions, prompt template engineering, and LLM grounding.' }
+              { id: 'm-4-1', title: '4.1 REST Web Services & Callouts', duration: '2h 10m', meta: 'Recorded Aug 25, 2026 • Instructor: Vajra Academy Lead', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', desc: 'Named Credentials, Auth Providers, Http Callouts, JSON parsing, and custom REST API endpoint development.' },
+              { id: 'm-4-2', title: '4.2 Agentforce AI & Copilot Setup', duration: '1h 50m', meta: 'Recorded Aug 26, 2026 • Instructor: Vajra Academy Lead', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', desc: 'Salesforce Agentforce setup, autonomous topic actions, prompt template engineering, and LLM grounding.' }
             ]
           }
         ]
@@ -667,8 +663,8 @@ export default class AccountViewer extends LightningElement {
           {
             moduleTitle: 'Module 1: Evening Core Fundamentals',
             lectures: [
-              { id: 'e-1-1', title: '1.1 Salesforce Admin Essentials', duration: '1h 30m', meta: 'Recorded Aug 10, 2026 • Instructor: Gautam Chaskar', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', desc: 'Evening batch intensive on Admin settings, security model, and Flow Builder.' },
-              { id: 'e-1-2', title: '1.2 Apex & LWC Bootcamp', duration: '1h 45m', meta: 'Recorded Aug 14, 2026 • Instructor: Gautam Chaskar', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', desc: 'Apex trigger development and LWC component architecture.' }
+              { id: 'e-1-1', title: '1.1 Salesforce Admin Essentials', duration: '1h 30m', meta: 'Recorded Aug 10, 2026 • Instructor: Vajra Academy Lead', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', desc: 'Evening batch intensive on Admin settings, security model, and Flow Builder.' },
+              { id: 'e-1-2', title: '1.2 Apex & LWC Bootcamp', duration: '1h 45m', meta: 'Recorded Aug 14, 2026 • Instructor: Vajra Academy Lead', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', desc: 'Apex trigger development and LWC component architecture.' }
             ]
           }
         ]
@@ -681,7 +677,7 @@ export default class AccountViewer extends LightningElement {
           {
             moduleTitle: 'Module 1: Weekend Intensive Masterclass',
             lectures: [
-              { id: 'w-1-1', title: '1.1 Weekend Bootcamp Part 1', duration: '3h 30m', meta: 'Recorded Aug 16, 2026 • Instructor: Gautam Chaskar', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', desc: '4-hour extended weekend session covering Admin, Apex, and LWC capstone project.' }
+              { id: 'w-1-1', title: '1.1 Weekend Bootcamp Part 1', duration: '3h 30m', meta: 'Recorded Aug 16, 2026 • Instructor: Vajra Academy Lead', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', desc: '4-hour extended weekend session covering Admin, Apex, and LWC capstone project.' }
             ]
           }
         ]
@@ -933,13 +929,6 @@ export default class AccountViewer extends LightningElement {
       if (target) target.style.display = 'block';
     }
 
-    function submitLectureDoubt(e) {
-      e.preventDefault();
-      const txt = document.getElementById('lectureDoubtText').value;
-      showToast('📩 Doubt submitted to Gautam Chaskar! Check Q&A & Doubts tab for updates.', 'success');
-      document.getElementById('lectureDoubtText').value = '';
-    }
-
     function switchVideoTab(tabName, btnEl) {
       const tabs = document.querySelectorAll('.video-resource-tab');
       tabs.forEach(t => t.style.display = 'none');
@@ -955,7 +944,7 @@ export default class AccountViewer extends LightningElement {
     function submitLectureDoubt(e) {
       e.preventDefault();
       const txt = document.getElementById('lectureDoubtText').value;
-      showToast('📩 Doubt submitted to Gautam Chaskar! Check Q&A & Doubts tab for updates.', 'success');
+      showToast('📩 Doubt submitted to Vajra Academy instructors! Check Q&A & Doubts tab for updates.', 'success');
       document.getElementById('lectureDoubtText').value = '';
     }
   </script>

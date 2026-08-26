@@ -1,20 +1,19 @@
-# Gautam Chaskar Salesforce Academy - Feature & Functionality Specification
+# Vajra Academy - Feature & Functionality Specification
 
 This document serves as the **Master Feature Registry** for the Coaching Classes Website. When introducing new features or refactoring existing code, **all listed features and contracts below MUST be preserved**.
 
 ---
 
-## 1. Brand & Personalization Registry
+## 1. Brand & Organization Registry
 
 | Attribute | Value / Rule |
 | :--- | :--- |
-| **Lead Instructor** | Gautam Chaskar (Salesforce Developer @ UST) |
-| **Brand Logo** | `<Gautam Chaskar/>` |
+| **Academy Name** | **Vajra Academy** |
+| **Brand Logo Asset** | `logo.png` (Neon Vajra electric shield emblem) |
 | **Certifications (7x)** | Platform Developer II, AI Associate, JavaScript Developer I, Platform App Builder, Platform Developer I, Administrator, Platform Foundations |
-| **Contact Email** | `chaskargautam@gmail.com` |
+| **Contact Email** | `contact@vajraacademy.com` |
 | **Contact Phone / WhatsApp** | `+91 77091 71839` |
 | **Locations** | Pune & Nagpur IT Park, Maharashtra, India |
-| **Social Links** | LinkedIn (`in/gautamchaskar`), GitHub (`gautamchaskar`) |
 
 ---
 
@@ -22,6 +21,7 @@ This document serves as the **Master Feature Registry** for the Coaching Classes
 
 ### A. Navigation & Theme System
 - [x] **Sticky Navigation Header**: Smooth backdrop blur on scroll (`.navbar.scrolled`).
+- [x] **Brand Logo Image**: High-resolution `logo.png` logo image asset with neon electric Vajra emblem and glowing drop-shadow.
 - [x] **Dark / Light Theme Toggle**: Persistent `localStorage.setItem('theme', ...)` switching design variables across all sections.
 - [x] **Mobile Drawer Menu**: Slide-down menu with quick CTAs for small screens.
 - [x] **Clean Header Links**: Concise marketing links (`Home`, `Instructor`, `Live Batches`, `Syllabus`).
@@ -45,16 +45,15 @@ This document serves as the **Master Feature Registry** for the Coaching Classes
   - **Enhanced Full Video Title Visibility**: Multi-line title wrapping and dedicated duration badges so video names are 100% visible without text truncation.
   - **Persistent Completion Status**: Marking any lecture as completed (`✓ Completed`) persists in `localStorage.getItem('completedLectures')`, highlighting the item with green checkmark badges (`✅`) and `✓ Completed` pills across page reloads and switches.
   - **Dedicated Right Video Player Workspace**: Displays embedded HD Video Player, video metadata, `Mark Completed` toggle, `Notes PDF` download button, and resource tabs (Notes, Code Snippet, Ask Doubt).
-- [x] **Tab 3 - Q&A & Doubts**: Submit questions directly to Gautam Chaskar by topic, view replies in `localStorage`.
+- [x] **Tab 3 - Q&A & Doubts**: Submit questions directly to Vajra Academy instructors by topic, view replies in `localStorage`.
 - [x] **Tab 4 - Assignments & Labs**: Submit GitHub repository URLs, dynamically update progress.
 - [x] **Tab 5 - Exam Simulator**: ADM-201 & PD1 certification tests.
 - [x] **Tab 6 - Orders & Invoices**: View Order `#SFDC-5196` (₹5,000.00) with printable GST receipt.
-- [x] **Tab 7 - Certificate**: Dynamic Certificate of Excellence generator signed by Gautam Chaskar.
+- [x] **Tab 7 - Certificate**: Dynamic Certificate of Excellence generator issued by Vajra Academy.
 - [x] **Tab 8 - Settings**: Profile editor form for student name, email, and active batch slot.
 
 ### D. Lead Instructor Showcase
-- [x] **Gautam Chaskar Profile Card**: Photo avatar with initials `GC`, current UST role badge, experience metrics, and 7x Salesforce credentials badges.
-- [x] **Direct Social Buttons**: Clickable external links to LinkedIn & GitHub.
+- [x] **Vajra Academy Profile Card**: Photo avatar with initials `VA`, 7x Salesforce credentials badges, and MNC lead architect experience metrics.
 
 ### E. Certification Exam Practice Simulator (`#exam-simulator`)
 - [x] **Interactive Practice Quiz Engine**: Supports **Salesforce Admin (ADM-201)** and **Platform Developer 1 (PD1)** practice questions.
