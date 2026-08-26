@@ -24,7 +24,7 @@ This document serves as the **Master Feature Registry** for the Coaching Classes
 - [x] **Brand Logo Image**: High-resolution `logo.png` logo image asset with neon electric Vajra emblem and glowing drop-shadow.
 - [x] **Dark / Light Theme Toggle**: Persistent `localStorage.setItem('theme', ...)` switching design variables across all sections.
 - [x] **Mobile Drawer Menu**: Slide-down menu with quick CTAs for small screens.
-- [x] **Clean Header Links**: Concise marketing links (`Home`, `Instructor`, `Live Batches`, `Syllabus`).
+- [x] **Clean Header Links**: Concise marketing links (`Home`, `Salary & Growth`, `Live Batches`, `Syllabus`).
 
 ### B. Public Marketing Website (`index.html`) & Auth Flow
 - [x] **Hero Banner**: Displays 7x Certified badge, headline, stats (98% Placement Rate, 1,500+ Mentored, ₹5,000 Special Fee), and quick demo booking form.
