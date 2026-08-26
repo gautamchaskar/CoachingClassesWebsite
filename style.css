@@ -155,39 +155,42 @@ button, input, select, textarea {
 }
 
 .badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.35rem 0.85rem;
-  border-radius: var(--radius-full);
-  font-size: 0.825rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  padding: 0.35rem 0.85rem !important;
+  border-radius: var(--radius-full) !important;
+  font-size: 0.825rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  text-transform: uppercase !important;
+  white-space: normal !important;
+  line-height: 1.4 !important;
+  text-align: left !important;
 }
 
 .badge-primary {
-  background: rgba(59, 130, 246, 0.15);
-  color: #60a5fa;
-  border: 1px solid rgba(59, 130, 246, 0.3);
+  background: rgba(59, 130, 246, 0.15) !important;
+  color: #60a5fa !important;
+  border: 1px solid rgba(59, 130, 246, 0.3) !important;
 }
 
 .badge-emerald {
-  background: rgba(16, 185, 129, 0.15);
-  color: #34d399;
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  background: rgba(16, 185, 129, 0.15) !important;
+  color: #34d399 !important;
+  border: 1px solid rgba(16, 185, 129, 0.3) !important;
 }
 
 .badge-amber {
-  background: rgba(245, 158, 11, 0.15);
-  color: #fbbf24;
-  border: 1px solid rgba(245, 158, 11, 0.3);
+  background: rgba(245, 158, 11, 0.15) !important;
+  color: #fbbf24 !important;
+  border: 1px solid rgba(245, 158, 11, 0.3) !important;
 }
 
 .badge-rose {
-  background: rgba(244, 63, 94, 0.15);
-  color: #f87171;
-  border: 1px solid rgba(244, 63, 94, 0.3);
+  background: rgba(244, 63, 94, 0.15) !important;
+  color: #f87171 !important;
+  border: 1px solid rgba(244, 63, 94, 0.3) !important;
 }
 
 .badge-pulse {
@@ -280,44 +283,70 @@ button, input, select, textarea {
   width: 100%;
 }
 
+/* --- General Reset Overrides for Bootstrap Compatibility --- */
+a {
+  text-decoration: none !important;
+}
+
+ul {
+  padding-left: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.container {
+  width: 100% !important;
+  max-width: var(--container-max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+  box-sizing: border-box !important;
+}
+
 /* --- Navigation Header --- */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: var(--header-height);
-  z-index: 1000;
+header.navbar, .navbar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  height: var(--header-height) !important;
+  z-index: 1000 !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  background: rgba(11, 15, 25, 0.85) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid var(--glass-border) !important;
   transition: all var(--transition-normal);
 }
 
 .navbar.scrolled {
-  background: rgba(11, 15, 25, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--glass-border);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  background: rgba(11, 15, 25, 0.95) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
 }
 
 [data-theme="light"] .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.95) !important;
 }
 
 .nav-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100%;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  height: 100% !important;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-family: var(--font-heading);
-  font-size: 1.4rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  font-family: var(--font-heading) !important;
+  font-size: 1.4rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  text-decoration: none !important;
 }
 
 .logo-icon {
@@ -338,22 +367,27 @@ button, input, select, textarea {
 }
 
 .nav-links {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  list-style: none;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 1.5rem !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .nav-link {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  position: relative;
-  padding: 0.5rem 0;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  color: var(--text-secondary) !important;
+  position: relative !important;
+  padding: 0.5rem 0 !important;
+  background: transparent !important;
+  text-decoration: none !important;
 }
 
 .nav-link:hover, .nav-link.active {
-  color: var(--text-primary);
+  color: var(--text-primary) !important;
 }
 
 .nav-link::after {
@@ -373,9 +407,9 @@ button, input, select, textarea {
 }
 
 .nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
 }
 
 .theme-toggle {
@@ -448,29 +482,37 @@ button, input, select, textarea {
 }
 
 .hero-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 3.5rem;
-  align-items: center;
+  display: grid !important;
+  grid-template-columns: 1.15fr 0.85fr !important;
+  gap: 3.5rem !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+@media (max-width: 991px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
 }
 
 .hero-content {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.5rem !important;
 }
 
 .hero-title {
-  font-size: 3.5rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
+  font-size: 3.5rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.1 !important;
 }
 
 .hero-description {
-  font-size: 1.15rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
+  font-size: 1.15rem !important;
+  color: var(--text-secondary) !important;
+  line-height: 1.7 !important;
 }
 
 .hero-stats {
