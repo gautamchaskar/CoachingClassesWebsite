@@ -33,7 +33,8 @@ This document serves as the **Master Feature Registry** for the Coaching Classes
 
 ### C. Dedicated Personalised Student Learning Portal (`dashboard.html` / `/dashboard`)
 - [x] **Strict Page Auth Guard**: Direct unauthenticated access to `dashboard.html` redirects to `index.html?auth=required#authModal` and triggers login modal.
-- [x] **Full-Bleed Full Screen Layout**: `container-fluid` design utilizing 100% viewport width without artificial side margins/padding.
+- [x] **Full-Bleed Full Screen Layout**: `container-fluid` design utilizing 100% viewport width without artificial side margins/padding (`padding: 0.5rem 0.75rem`).
+- [x] **Zero-Space Layout**: Removed vertical space after navbar (`padding-top: 0.5rem`), tightened grid gap between sidebar/tabbar and content (`gap: 0.75rem`), and optimized spacing inside LMS video player.
 - [x] **Header Controls**: Active batch slot (`⚡ Morning Batch (07:30 AM)`), Theme Switcher, and Logout button (clears session & redirects to `index.html`).
 - [x] **Tab 1 - Overview**: Quick stats cards (Enrolled Courses: 3, Active Courses: 1, Completed Courses: 2), Progress Bar, Join Live Zoom Class link, Attendance & Hours learned stats.
 - [x] **Tab 2 - My Courses & Lectures (Batch Tile Boxes Grid, Dynamic Playlist & Video LMS)**:

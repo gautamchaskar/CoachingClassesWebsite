@@ -1245,22 +1245,29 @@ button, input, select, textarea {
   margin: 0.5rem 0;
 }
 
+.container-fluid {
+  width: 100%;
+  max-width: 100%;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
 /* --- STUDENT PORTAL & DASHBOARD STYLES --- */
 .portal-section {
-  padding-top: calc(var(--header-height) + 2rem);
-  padding-bottom: 6rem;
+  padding-top: calc(var(--header-height) + 0.5rem);
+  padding-bottom: 2rem;
   min-height: 85vh;
 }
 
 .portal-grid {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 2rem;
+  grid-template-columns: 340px 1fr;
+  gap: 0.75rem;
 }
 
 .portal-sidebar {
-  border-radius: var(--radius-lg);
-  padding: 1.75rem;
+  border-radius: var(--radius-md);
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1324,8 +1331,8 @@ button, input, select, textarea {
 }
 
 .portal-content {
-  border-radius: var(--radius-lg);
-  padding: 2.25rem;
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
 }
 
 .portal-tab-content {
