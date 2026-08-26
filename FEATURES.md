@@ -40,6 +40,8 @@ This document serves as the **Master Feature Registry** for the Coaching Classes
   - **Crisp Filter Pills**: `All Courses (3)`, `Active (1)`, `Completed (2)`.
   - **Enrolled Batch Tile Cards**: 3 interactive batch cards (`☀️ Morning Batch`, `🌙 Evening Batch`, `⚡ Weekend Fast-Track`).
   - **Tile Click Dynamic Sidebar Switch**: Opening any batch automatically converts the left sidebar into the **Module & Lecture Content Playlist Tree** with `← Back to All Batches` button.
+  - **Collapsible Module Sections (Fold & Unfold Accordion)**: Interactive module headers (`.playlist-module-header`) with rotation chevrons (`▼` vs `▶`) to fold/unfold module contents cleanly.
+  - **Enhanced Full Video Title Visibility**: Multi-line title wrapping and dedicated duration badges so video names are 100% visible without text truncation.
   - **Dedicated Right Video Player Workspace**: Displays embedded HD Video Player, video metadata, `Mark Completed` toggle, `Notes PDF` download button, and resource tabs (Notes, Code Snippet, Ask Doubt).
 - [x] **Tab 3 - Q&A & Doubts**: Submit questions directly to Gautam Chaskar by topic, view replies in `localStorage`.
 - [x] **Tab 4 - Assignments & Labs**: Submit GitHub repository URLs, dynamically update progress.

@@ -748,26 +748,38 @@ export default class AccountViewer extends LightningElement {
       document.getElementById('playlistBatchTitle').textContent = batchData.title;
       document.getElementById('playlistBatchMeta').textContent = batchData.meta;
 
-      // 2. Render Left Sidebar Playlist Tree Items
+      // 2. Render Left Sidebar Playlist Tree Items with Collapsible Accordion & Full Title Visibility
       let treeHTML = '';
       let firstLectureObj = null;
 
       batchData.modules.forEach((mod, modIdx) => {
-        treeHTML += `<div class="playlist-module-header">${mod.moduleTitle}</div>`;
+        const modId = `mod-sec-${modIdx}`;
+        treeHTML += `
+          <div class="playlist-module-header" onclick="toggleModuleSection('${modId}', this)">
+            <span>${mod.moduleTitle}</span>
+            <span class="module-chevron">▼</span>
+          </div>
+          <div class="playlist-module-body" id="${modId}">
+        `;
+
         mod.lectures.forEach((lec, lecIdx) => {
           if (!firstLectureObj) firstLectureObj = { lec, moduleTitle: mod.moduleTitle };
           treeHTML += `
             <div class="playlist-lecture-item ${modIdx === 0 && lecIdx === 0 ? 'active' : ''}" 
                  id="pitem-${lec.id}"
                  onclick="selectLectureVideo('${lec.id}', '${lec.title.replace(/'/g, "\\'")}', '${mod.moduleTitle.replace(/'/g, "\\'")}', '${lec.meta}', '${lec.embedUrl}', '${lec.desc.replace(/'/g, "\\'")}')">
-              <div style="display:flex; align-items:center; gap:0.4rem; overflow:hidden;">
+              <div class="lecture-title-row">
                 <span class="play-icon">▶</span>
-                <span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${lec.title}</span>
+                <span class="lecture-title-text">${lec.title}</span>
               </div>
-              <span class="lecture-duration">${lec.duration}</span>
+              <div class="lecture-meta-row">
+                <span class="lecture-duration-badge">⏱️ ${lec.duration}</span>
+              </div>
             </div>
           `;
         });
+
+        treeHTML += `</div>`;
       });
 
       if (treeContainer) treeContainer.innerHTML = treeHTML;
@@ -788,6 +800,14 @@ export default class AccountViewer extends LightningElement {
           firstLectureObj.lec.embedUrl,
           firstLectureObj.lec.desc
         );
+      }
+    }
+
+    function toggleModuleSection(modId, headerEl) {
+      const bodyEl = document.getElementById(modId);
+      if (bodyEl) {
+        bodyEl.classList.toggle('collapsed');
+        headerEl.classList.toggle('collapsed');
       }
     }
 
