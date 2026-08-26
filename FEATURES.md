@@ -36,12 +36,11 @@ This document serves as the **Master Feature Registry** for the Coaching Classes
 - [x] **Full-Bleed Full Screen Layout**: `container-fluid` design utilizing 100% viewport width without artificial side margins/padding.
 - [x] **Header Controls**: Active batch slot (`⚡ Morning Batch (07:30 AM)`), Theme Switcher, and Logout button (clears session & redirects to `index.html`).
 - [x] **Tab 1 - Overview**: Quick stats cards (Enrolled Courses: 3, Active Courses: 1, Completed Courses: 2), Progress Bar, Join Live Zoom Class link, Attendance & Hours learned stats.
-- [x] **Tab 2 - My Courses & Lectures (Batch Tile Boxes Grid & Filters)**:
+- [x] **Tab 2 - My Courses & Lectures (Batch Tile Boxes Grid, Dynamic Playlist & Video LMS)**:
   - **Crisp Filter Pills**: `All Courses (3)`, `Active (1)`, `Completed (2)`.
   - **Enrolled Batch Tile Cards**: 3 interactive batch cards (`☀️ Morning Batch`, `🌙 Evening Batch`, `⚡ Weekend Fast-Track`).
-  - **Course Progress Bar per Tile**: Individual progress fill %, lecture count, and total hours per batch box.
-  - **Tile Click Navigation**: Clicking any Batch Tile Box opens the detailed lecture playlist inside that batch (`openBatchLectures`).
-  - **Back Navigation**: `← Back to Enrolled Batches` button (`closeBatchLectures`).
+  - **Tile Click Dynamic Sidebar Switch**: Opening any batch automatically converts the left sidebar into the **Module & Lecture Content Playlist Tree** with `← Back to All Batches` button.
+  - **Dedicated Right Video Player Workspace**: Displays embedded HD Video Player, video metadata, `Mark Completed` toggle, `Notes PDF` download button, and resource tabs (Notes, Code Snippet, Ask Doubt).
 - [x] **Tab 3 - Q&A & Doubts**: Submit questions directly to Gautam Chaskar by topic, view replies in `localStorage`.
 - [x] **Tab 4 - Assignments & Labs**: Submit GitHub repository URLs, dynamically update progress.
 - [x] **Tab 5 - Exam Simulator**: ADM-201 & PD1 certification tests.
