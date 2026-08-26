@@ -57,9 +57,9 @@ This document serves as the **Master Feature Registry** for the Coaching Classes
 - [x] **Interactive Practice Quiz Engine**: Supports **Salesforce Admin (ADM-201)** and **Platform Developer 1 (PD1)** practice questions.
 - [x] **Option Selector & Score Calculator**: Select answers, calculate score %, and display pass/fail feedback with answers.
 
-### F. Salesforce Salary & Career Growth Estimator (`#salary-calculator`)
-- [x] **Interactive Role Cards Grid**: 4 interactive glassmorphic cards (`Salesforce Developer`, `AI & Agentforce Specialist`, `Salesforce Administrator`, `Technical Architect`).
-- [x] **Streamlined Industry Package Display**: Dynamic CTC package range display (₹5.5 LPA to ₹42.0 LPA) without experience slider bar.
+### F. Salesforce Salary & Career Growth Insights (`#salary-calculator`)
+- [x] **Interactive Role Cards Grid with Skill Pills**: 4 glassmorphic role cards with tech skill pills (`Apex Triggers`, `LWC Framework`, `Agentforce AI`, `Flow Builder`, `Multi-Org Arch`).
+- [x] **Refined Industry Package Banner**: Dynamic CTC package range display (₹5.5 LPA to ₹42.0 LPA) with MNC placement benchmarks and career guidance CTA.
 
 ---
 

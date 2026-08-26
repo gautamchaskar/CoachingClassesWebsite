@@ -749,6 +749,22 @@ button, input, select, textarea {
   margin-top: 0.5rem;
 }
 
+.role-skill-tags {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  margin: 0.4rem 0 0.5rem 0;
+}
+
+.skill-tag {
+  font-size: 0.725rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-secondary);
+  border: 1px solid var(--glass-border);
+}
+
 /* --- Live Batches Section --- */
 .filter-tabs {
   display: flex;
