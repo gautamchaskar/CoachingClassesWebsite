@@ -83,93 +83,138 @@
   </div>
 
   <!-- ==========================================================================
-       SECTION: SALESFORCE CAREER & SALARY ESTIMATOR (TOP HIGHLIGHT)
+       SECTION: SALESFORCE CAREER & SALARY ESTIMATOR (FLAGSHIP TOP FEATURE)
        ========================================================================== -->
-  <section class="section" id="salary-calculator" style="padding-top: calc(var(--header-height) + 2rem); padding-bottom: 3rem; background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);">
+  <section class="section" id="salary-calculator" style="padding-top: calc(var(--header-height) + 2rem); padding-bottom: 3.5rem; background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.12) 0%, rgba(11, 15, 25, 0.98) 70%);">
     <div class="container">
-      <div class="section-header">
-        <span class="section-subtitle">⚡ High-Growth Tech Careers</span>
-        <h2 class="section-title">Salesforce Career & <span class="text-gradient">Salary Insights</span></h2>
-        <p class="section-description">
-          Explore real IT market packages, core technical skills, and hiring trends across top Salesforce career tracks in India.
+      <div class="section-header" style="max-width:850px; margin-left:auto; margin-right:auto;">
+        <span class="section-subtitle" style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(59,130,246,0.15); border:1px solid rgba(59,130,246,0.3); color:#60a5fa; padding:0.4rem 1rem; border-radius:var(--radius-full); font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:1rem;">
+          🔥 #1 IN-DEMAND TECH SKILL IN 2026 • UP TO 300% CTC GROWTH
+        </span>
+        <h2 class="section-title" style="font-size:2.75rem; letter-spacing:-0.03em;">Salesforce Career & <span class="text-gradient">Salary Insights</span></h2>
+        <p class="section-description" style="font-size:1.1rem; color:var(--text-secondary); line-height:1.7;">
+          Salesforce ecosystem is creating <strong>11.6 Million new enterprise jobs globally</strong>. Select a high-demand career track below to analyze real-time package ranges, core technical skills, and hiring benchmarks across top MNCs in India.
         </p>
+
+        <!-- Quick Industry Metrics Highlights -->
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:1rem; margin-top:1.75rem; padding:1.25rem; background:rgba(17,24,39,0.7); border:1px solid var(--glass-border); border-radius:var(--radius-md); text-align:center;">
+          <div>
+            <div style="font-size:1.5rem; font-weight:800; color:var(--accent-primary);">45,000+</div>
+            <div style="font-size:0.775rem; color:var(--text-muted); font-weight:600;">Active Jobs in India</div>
+          </div>
+          <div>
+            <div style="font-size:1.5rem; font-weight:800; color:var(--accent-emerald);">₹7.5 - ₹28 LPA</div>
+            <div style="font-size:0.775rem; color:var(--text-muted); font-weight:600;">Avg Developer CTC</div>
+          </div>
+          <div>
+            <div style="font-size:1.5rem; font-weight:800; color:var(--accent-amber);">180% - 300%</div>
+            <div style="font-size:0.775rem; color:var(--text-muted); font-weight:600;">Career Salary Hike</div>
+          </div>
+          <div>
+            <div style="font-size:1.5rem; font-weight:800; color:var(--accent-secondary);">98% Placed</div>
+            <div style="font-size:0.775rem; color:var(--text-muted); font-weight:600;">In 90 Days Post-Course</div>
+          </div>
+        </div>
       </div>
 
-      <div class="salary-card bg-glass">
+      <div class="salary-card bg-glass" style="border:1px solid var(--glass-border-hover); max-width:1050px;">
         <div style="margin-bottom:1.75rem;">
-          <h3 style="font-size:1.15rem; margin-bottom:1rem; color:var(--text-primary); text-transform:uppercase; letter-spacing:0.04em;">Select Salesforce Career Track</h3>
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem;">
+            <h3 style="font-size:1.15rem; color:var(--text-primary); text-transform:uppercase; letter-spacing:0.04em; font-weight:800;">
+              ✨ Hover or Tap to Explore Career Tracks:
+            </h3>
+            <span style="font-size:0.8rem; color:var(--accent-primary); font-weight:600;">
+              ⚡ Real IT Market Benchmarks (Updated Aug 2026)
+            </span>
+          </div>
           
-          <div class="salary-role-grid">
-            <div class="salary-role-card active" data-role="developer">
+          <div class="salary-role-grid" style="grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap:1.25rem;">
+            
+            <!-- Role 1: Developer -->
+            <div class="salary-role-card active" data-role="developer" style="border-top:3px solid var(--accent-primary);">
               <div class="role-header">
                 <span class="role-title">💻 Salesforce Developer</span>
-                <span class="badge badge-primary">🔥 HIGH DEMAND</span>
+                <span class="badge badge-primary" style="font-size:0.7rem;">🔥 HIGH DEMAND</span>
               </div>
               <div class="role-skill-tags">
                 <span class="skill-tag">Apex Triggers</span>
                 <span class="skill-tag">LWC Framework</span>
                 <span class="skill-tag">REST APIs</span>
+                <span class="skill-tag">SOQL Tuning</span>
               </div>
-              <div class="role-range">Package Range: <strong style="color:var(--accent-emerald);">₹7.5 LPA - ₹28.0 LPA</strong></div>
+              <div class="role-range" style="margin-top:0.75rem;">Package Range: <strong style="color:var(--accent-emerald); font-size:1.05rem;">₹7.5 LPA - ₹28.0 LPA</strong></div>
             </div>
 
-            <div class="salary-role-card" data-role="ai">
+            <!-- Role 2: AI & Agentforce -->
+            <div class="salary-role-card" data-role="ai" style="border-top:3px solid var(--accent-emerald);">
               <div class="role-header">
                 <span class="role-title">🤖 AI & Agentforce Specialist</span>
-                <span class="badge badge-emerald">🚀 NEXT-GEN AI</span>
+                <span class="badge badge-emerald" style="font-size:0.7rem;">🚀 NEXT-GEN AI</span>
               </div>
               <div class="role-skill-tags">
                 <span class="skill-tag">Agentforce AI</span>
-                <span class="skill-tag">Prompt Eng</span>
+                <span class="skill-tag">Prompt Builder</span>
                 <span class="skill-tag">Einstein Copilot</span>
+                <span class="skill-tag">Data Cloud RAG</span>
               </div>
-              <div class="role-range">Package Range: <strong style="color:var(--accent-emerald);">₹12.0 LPA - ₹34.0 LPA</strong></div>
+              <div class="role-range" style="margin-top:0.75rem;">Package Range: <strong style="color:var(--accent-emerald); font-size:1.05rem;">₹12.0 LPA - ₹34.0 LPA</strong></div>
             </div>
 
-            <div class="salary-role-card" data-role="admin">
+            <!-- Role 3: Administrator -->
+            <div class="salary-role-card" data-role="admin" style="border-top:3px solid var(--accent-amber);">
               <div class="role-header">
                 <span class="role-title">⚡ Salesforce Administrator</span>
-                <span class="badge badge-secondary">✨ FOUNDATION</span>
+                <span class="badge badge-amber" style="font-size:0.7rem;">✨ FOUNDATION</span>
               </div>
               <div class="role-skill-tags">
                 <span class="skill-tag">Flow Builder</span>
                 <span class="skill-tag">Security & Roles</span>
-                <span class="skill-tag">Data Cloud</span>
+                <span class="skill-tag">Data Loader</span>
+                <span class="skill-tag">Approval Engine</span>
               </div>
-              <div class="role-range">Package Range: <strong style="color:var(--accent-emerald);">₹5.5 LPA - ₹18.0 LPA</strong></div>
+              <div class="role-range" style="margin-top:0.75rem;">Package Range: <strong style="color:var(--accent-emerald); font-size:1.05rem;">₹5.5 LPA - ₹18.0 LPA</strong></div>
             </div>
 
-            <div class="salary-role-card" data-role="architect">
+            <!-- Role 4: Technical Architect -->
+            <div class="salary-role-card" data-role="architect" style="border-top:3px solid var(--accent-purple);">
               <div class="role-header">
                 <span class="role-title">🏗️ Technical Architect</span>
-                <span class="badge badge-purple">🏆 EXECUTIVE</span>
+                <span class="badge badge-rose" style="font-size:0.7rem;">🏆 EXECUTIVE</span>
               </div>
               <div class="role-skill-tags">
                 <span class="skill-tag">Multi-Org Arch</span>
-                <span class="skill-tag">Enterprise Integration</span>
+                <span class="skill-tag">Integration APIs</span>
                 <span class="skill-tag">CI/CD Pipeline</span>
+                <span class="skill-tag">OAuth 2.0</span>
               </div>
-              <div class="role-range">Package Range: <strong style="color:var(--accent-emerald);">₹16.0 LPA - ₹42.0 LPA</strong></div>
+              <div class="role-range" style="margin-top:0.75rem;">Package Range: <strong style="color:var(--accent-emerald); font-size:1.05rem;">₹16.0 LPA - ₹42.0 LPA</strong></div>
             </div>
+
           </div>
         </div>
 
-        <div style="background:var(--bg-secondary); border:1px solid var(--glass-border); border-radius:var(--radius-md); padding:1.75rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1.5rem; margin-top:0.5rem;">
+        <!-- Selected Role Benchmark Display Box -->
+        <div style="background:var(--bg-secondary); border:1px solid var(--glass-border-hover); border-radius:var(--radius-md); padding:1.75rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1.5rem; margin-top:0.5rem; box-shadow:0 10px 30px rgba(0,0,0,0.3);">
           <div>
             <div style="font-size:0.8rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.25rem;">
-              Projected Industry Package (<span id="projectedRoleTitle" style="color:var(--accent-primary); font-weight:700;">Salesforce Developer</span>)
+              Projected Industry Package (<span id="projectedRoleTitle" style="color:var(--accent-primary); font-weight:800;">Salesforce Developer</span>)
             </div>
-            <div class="calc-result-amount" id="projectedSalary" style="color:var(--accent-emerald); font-size:2.2rem; font-weight:800; line-height:1.2;">
+            <div class="calc-result-amount" id="projectedSalary" style="color:var(--accent-emerald); font-size:2.4rem; font-weight:800; line-height:1.1; text-shadow:0 0 15px rgba(16,185,129,0.3);">
               ₹7.5 LPA - ₹28.0 LPA
             </div>
-            <div style="font-size:0.825rem; color:var(--text-secondary); margin-top:0.3rem;">
-              Based on placement benchmarks across UST, Deloitte, Accenture, TCS & Capgemini.
+            <div style="font-size:0.85rem; color:var(--text-secondary); margin-top:0.4rem; display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+              <span>Verified MNC Hiring Benchmark:</span>
+              <span class="badge badge-primary" style="font-size:0.75rem; text-transform:none;">Deloitte</span>
+              <span class="badge badge-emerald" style="font-size:0.75rem; text-transform:none;">Accenture</span>
+              <span class="badge badge-amber" style="font-size:0.75rem; text-transform:none;">UST Global</span>
+              <span class="badge badge-rose" style="font-size:0.75rem; text-transform:none;">TCS</span>
+              <span class="badge badge-primary" style="font-size:0.75rem; text-transform:none;">Capgemini</span>
             </div>
           </div>
 
           <div>
-            <button class="btn btn-primary" data-open-modal data-target-modal="enrollModal" data-batch="Salary Estimator Consultation" style="padding:0.75rem 1.75rem; font-size:0.95rem;">
-              🚀 Book Free Career Guidance Call
+            <button class="btn btn-primary btn-lg" data-open-modal data-target-modal="enrollModal" data-batch="Salary Estimator Consultation" style="padding:0.9rem 2rem; font-size:1rem; box-shadow:0 0 25px rgba(59,130,246,0.4);">
+              🚀 Book Free Career Guidance & Roadmap
             </button>
           </div>
         </div>

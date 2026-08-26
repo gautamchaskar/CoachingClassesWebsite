@@ -545,7 +545,7 @@ function initSalaryEstimator() {
   };
 
   roleCards.forEach(card => {
-    card.addEventListener('click', () => {
+    const activateCard = () => {
       roleCards.forEach(c => c.classList.remove('active'));
       card.classList.add('active');
       const roleKey = card.getAttribute('data-role') || 'developer';
@@ -553,7 +553,10 @@ function initSalaryEstimator() {
 
       if (projectedSalary) projectedSalary.textContent = data.range;
       if (roleTitleEl) roleTitleEl.textContent = data.title;
-    });
+    };
+
+    card.addEventListener('click', activateCard);
+    card.addEventListener('mouseenter', activateCard);
   });
 }
 
