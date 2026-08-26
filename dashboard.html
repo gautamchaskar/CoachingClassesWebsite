@@ -705,6 +705,20 @@ export default class AccountViewer extends LightningElement {
       }
     });
 
+    let currentLectureId = 'm-1-1';
+
+    function getCompletedLectures() {
+      const saved = localStorage.getItem('completedLectures');
+      if (saved) {
+        try { return JSON.parse(saved); } catch(e) {}
+      }
+      return ['m-1-1', 'm-1-2'];
+    }
+
+    function setCompletedLectures(arr) {
+      localStorage.setItem('completedLectures', JSON.stringify(arr));
+    }
+
     // Filter Tiles by Enrolled / Active / Completed Status (KSoft Competitor Match)
     function filterCourseTiles(filterType) {
       const pillBtns = document.querySelectorAll('#courseFilterPills .tab-btn');
@@ -748,9 +762,10 @@ export default class AccountViewer extends LightningElement {
       document.getElementById('playlistBatchTitle').textContent = batchData.title;
       document.getElementById('playlistBatchMeta').textContent = batchData.meta;
 
-      // 2. Render Left Sidebar Playlist Tree Items with Collapsible Accordion & Full Title Visibility
+      // 2. Render Left Sidebar Playlist Tree Items with Persistent Completed Badges
       let treeHTML = '';
       let firstLectureObj = null;
+      const completedList = getCompletedLectures();
 
       batchData.modules.forEach((mod, modIdx) => {
         const modId = `mod-sec-${modIdx}`;
@@ -764,16 +779,18 @@ export default class AccountViewer extends LightningElement {
 
         mod.lectures.forEach((lec, lecIdx) => {
           if (!firstLectureObj) firstLectureObj = { lec, moduleTitle: mod.moduleTitle };
+          const isDone = completedList.includes(lec.id);
           treeHTML += `
-            <div class="playlist-lecture-item ${modIdx === 0 && lecIdx === 0 ? 'active' : ''}" 
+            <div class="playlist-lecture-item ${isDone ? 'is-completed' : ''} ${modIdx === 0 && lecIdx === 0 ? 'active' : ''}" 
                  id="pitem-${lec.id}"
                  onclick="selectLectureVideo('${lec.id}', '${lec.title.replace(/'/g, "\\'")}', '${mod.moduleTitle.replace(/'/g, "\\'")}', '${lec.meta}', '${lec.embedUrl}', '${lec.desc.replace(/'/g, "\\'")}')">
               <div class="lecture-title-row">
-                <span class="play-icon">▶</span>
+                <span class="play-icon" id="picon-${lec.id}">${isDone ? '✅' : '▶'}</span>
                 <span class="lecture-title-text">${lec.title}</span>
               </div>
               <div class="lecture-meta-row">
                 <span class="lecture-duration-badge">⏱️ ${lec.duration}</span>
+                <span id="pbadge-${lec.id}" class="badge badge-emerald" style="font-size:0.65rem; padding:0.1rem 0.35rem; display:${isDone ? 'inline-block' : 'none'};">✓ Completed</span>
               </div>
             </div>
           `;
@@ -829,6 +846,7 @@ export default class AccountViewer extends LightningElement {
     }
 
     function selectLectureVideo(id, title, moduleTitle, meta, embedUrl, desc) {
+      currentLectureId = id;
       document.querySelectorAll('.playlist-lecture-item').forEach(item => item.classList.remove('active'));
       const activeItem = document.getElementById(`pitem-${id}`);
       if (activeItem) activeItem.classList.add('active');
@@ -845,23 +863,81 @@ export default class AccountViewer extends LightningElement {
       if (modEl) modEl.textContent = moduleTitle;
       if (metaEl) metaEl.textContent = meta;
       if (descEl) descEl.textContent = desc;
-    }
 
-    function toggleLectureCompletion() {
+      // Maintain persistent completed status on button
       const btn = document.getElementById('markCompleteBtn');
+      const completedList = getCompletedLectures();
       if (btn) {
-        if (btn.classList.contains('btn-primary')) {
-          btn.classList.remove('btn-primary');
-          btn.classList.add('btn-secondary');
-          btn.innerHTML = `<span id="completeCheckIcon">✓</span> Mark Completed`;
-          showToast('Status updated: Lecture marked as pending.', 'info');
-        } else {
+        if (completedList.includes(id)) {
           btn.classList.remove('btn-secondary');
           btn.classList.add('btn-primary');
           btn.innerHTML = `<span id="completeCheckIcon">✓</span> Completed`;
-          showToast('🎉 Lecture completed! Your progress has been updated.', 'success');
+        } else {
+          btn.classList.remove('btn-primary');
+          btn.classList.add('btn-secondary');
+          btn.innerHTML = `<span id="completeCheckIcon">✓</span> Mark Completed`;
         }
       }
+    }
+
+    function toggleLectureCompletion() {
+      if (!currentLectureId) return;
+      const btn = document.getElementById('markCompleteBtn');
+      let completedList = getCompletedLectures();
+      const itemEl = document.getElementById(`pitem-${currentLectureId}`);
+      const iconEl = document.getElementById(`picon-${currentLectureId}`);
+      const badgeEl = document.getElementById(`pbadge-${currentLectureId}`);
+
+      if (completedList.includes(currentLectureId)) {
+        // Unmark
+        completedList = completedList.filter(x => x !== currentLectureId);
+        setCompletedLectures(completedList);
+
+        if (btn) {
+          btn.classList.remove('btn-primary');
+          btn.classList.add('btn-secondary');
+          btn.innerHTML = `<span id="completeCheckIcon">✓</span> Mark Completed`;
+        }
+        if (itemEl) itemEl.classList.remove('is-completed');
+        if (iconEl) iconEl.textContent = '▶';
+        if (badgeEl) badgeEl.style.display = 'none';
+
+        showToast('Status updated: Lecture marked as pending.', 'info');
+      } else {
+        // Mark completed
+        completedList.push(currentLectureId);
+        setCompletedLectures(completedList);
+
+        if (btn) {
+          btn.classList.remove('btn-secondary');
+          btn.classList.add('btn-primary');
+          btn.innerHTML = `<span id="completeCheckIcon">✓</span> Completed`;
+        }
+        if (itemEl) itemEl.classList.add('is-completed');
+        if (iconEl) iconEl.textContent = '✅';
+        if (badgeEl) badgeEl.style.display = 'inline-block';
+
+        showToast('🎉 Lecture completed! Saved persistently in your learning record.', 'success');
+      }
+    }
+
+    function switchVideoTab(tabName, btnEl) {
+      const tabs = document.querySelectorAll('.video-resource-tab');
+      tabs.forEach(t => t.style.display = 'none');
+
+      const btns = btnEl.parentElement.querySelectorAll('.tab-btn');
+      btns.forEach(b => b.classList.remove('active'));
+
+      btnEl.classList.add('active');
+      const target = document.getElementById(`vtab-${tabName}`);
+      if (target) target.style.display = 'block';
+    }
+
+    function submitLectureDoubt(e) {
+      e.preventDefault();
+      const txt = document.getElementById('lectureDoubtText').value;
+      showToast('📩 Doubt submitted to Gautam Chaskar! Check Q&A & Doubts tab for updates.', 'success');
+      document.getElementById('lectureDoubtText').value = '';
     }
 
     function switchVideoTab(tabName, btnEl) {

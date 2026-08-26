@@ -42,6 +42,7 @@ This document serves as the **Master Feature Registry** for the Coaching Classes
   - **Tile Click Dynamic Sidebar Switch**: Opening any batch automatically converts the left sidebar into the **Module & Lecture Content Playlist Tree** with `← Back to All Batches` button.
   - **Collapsible Module Sections (Fold & Unfold Accordion)**: Interactive module headers (`.playlist-module-header`) with rotation chevrons (`▼` vs `▶`) to fold/unfold module contents cleanly.
   - **Enhanced Full Video Title Visibility**: Multi-line title wrapping and dedicated duration badges so video names are 100% visible without text truncation.
+  - **Persistent Completion Status**: Marking any lecture as completed (`✓ Completed`) persists in `localStorage.getItem('completedLectures')`, highlighting the item with green checkmark badges (`✅`) and `✓ Completed` pills across page reloads and switches.
   - **Dedicated Right Video Player Workspace**: Displays embedded HD Video Player, video metadata, `Mark Completed` toggle, `Notes PDF` download button, and resource tabs (Notes, Code Snippet, Ask Doubt).
 - [x] **Tab 3 - Q&A & Doubts**: Submit questions directly to Gautam Chaskar by topic, view replies in `localStorage`.
 - [x] **Tab 4 - Assignments & Labs**: Submit GitHub repository URLs, dynamically update progress.
